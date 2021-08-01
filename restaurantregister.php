@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Registration system PHP and MySQL</title>
+  <title>EATLK</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -10,15 +10,15 @@
   	<h2>Register</h2>
   </div>
 	
-  <form method="post" action="register.php">
+  <form method="post" action="restaurantregister.php">
   	<?php include('errors.php'); ?>
   	<div class="input-group">
-  	  <label>Fullname</label>
-  	  <input type="text" name="fullname" value="<?php echo $fullname; ?>">
+  	  <label>Email</label>
+  	  <input type="text" name="email" value="<?php echo $email; ?>">
   	</div>
   	<div class="input-group">
-  	  <label>Email</label>
-  	  <input type="email" name="email" value="<?php echo $email; ?>">
+  	  <label>Restaurant Name ( This will be used as username so add restaurant location and Restaurant at the end; ex : KFCUnionPlaceRestaurant )</label>
+  	  <input type="username" name="username" value="<?php echo $fullname; ?>">
   	</div>
 	  <div class="input-group">
   	  <label>Address</label>
@@ -33,9 +33,11 @@
   	  <input type="password" name="password_2">
   	</div>
   	<div class="input-group">
-  	  <a href="login.php"><button type="submit" class="btn" name="reg_user">Register</button></a>
+  	  <button type="submit" class="btn" name="reg_restaurant">Register</button>
   	</div>
-  
+  	<p>
+  		Already a member? <a href="login.php">Sign in</a>
+  	</p>
   </form>
 </body>
 </html>

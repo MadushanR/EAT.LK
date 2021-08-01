@@ -7,10 +7,10 @@
 </head>
 <body>
   <div class="header">
-  	<h2>Login</h2>
+  	<h2>Admin Login</h2>
   </div>
 	 
-  <form method="post" action="login.php">
+  <form method="post" action="adminlogin.php">
   	<?php include('errors.php'); ?>
   	<div class="input-group">
   		<label>Username</label>
@@ -21,14 +21,9 @@
   		<input type="password" name="password">
   	</div>
   	<div class="input-group">
-  		<button type="submit" class="btn" name="login_user">Login</button>
+  		<button type="submit" class="btn" name="login_admin">Login</button>
   	</div>
-  	<p>
-  		Not yet a member? <a href="registertype.php">Sign up</a>
-  	</p>
-	  <br>
-	  <a href="adminlogin.php"><p>Admin Login</p></a>
+	  
 </form>
-
 </body>
 </html>

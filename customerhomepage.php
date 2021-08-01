@@ -11,13 +11,7 @@
   	header("location: login.php");
   }
 ?>
-<html>
-    <head>
-        <title>welcome</title>
-    </head>
-    <body>  
-    <p>welcome</p>
-<p> <a href="login.php?logout='1'" style="color: red;">logout</a> </p>
-<p> <a href="output.php?logout='1'" style="color: red;">view profiles</a> </p>
-    </body>
-</html>
+ <?php  if (isset($_SESSION['username'])) : ?>
+    	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+    	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+    <?php endif ?>

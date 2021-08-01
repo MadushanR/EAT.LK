@@ -11,8 +11,8 @@
         <main>
          <p>Pick your user type</p>
          <div>
-         <a href="registerc.php"><button button type="button" class="btn btn-primary">CUSTOMER</button></a><br>
-         <a href="registerr.php"> <button button type="button" class="btn btn-primary">RESTAURANT</button></a>
+         <a href="customerregister.php"><button button type="button" class="btn btn-primary">CUSTOMER</button></a><br>
+         <a href="restaurantregister.php"> <button button type="button" class="btn btn-primary">RESTAURANT</button></a>
          </div>
             <footer>
               <hr>  

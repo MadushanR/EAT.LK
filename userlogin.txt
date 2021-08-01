@@ -1,0 +1,14 @@
+username
+fullname
+email
+phone number
+address
+password
+
+email
+restaurantname
+address
+password
+
+username
+password

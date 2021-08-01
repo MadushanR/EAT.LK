@@ -2,26 +2,30 @@
 session_start();
 
 // initializing variables
-$fullname = "";
-$email    = "";
+$username = "";
+$fullname    = "";
+$email = "";
+$phone    = "";
 $address = "";
 $errors = array(); 
 
 // connect to the database
-$db = mysqli_connect('localhost', 'root', '', 'admin');
+$db = mysqli_connect('localhost', 'root', '', 'eatlk');
 
 // REGISTER USER
-if (isset($_POST['reg_userc'])) {
+if (isset($_POST['reg_customer'])) {
   // receive all input values from the form
+  $username = mysqli_real_escape_string($db, $_POST['username']);
   $fullname = mysqli_real_escape_string($db, $_POST['fullname']);
   $email = mysqli_real_escape_string($db, $_POST['email']);
+  $phone = mysqli_real_escape_string($db, $_POST['phone']);
   $address = mysqli_real_escape_string($db, $_POST['address']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
 
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
-  if (empty($fullname)) { array_push($errors, "Fullname is required"); }
+  if (empty($username)) { array_push($errors, "Username is required"); }
   if (empty($email)) { array_push($errors, "Email is required"); }
   if (empty($password_1)) { array_push($errors, "Password is required"); }
   if ($password_1 != $password_2) {
@@ -30,11 +34,15 @@ if (isset($_POST['reg_userc'])) {
 
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email
-  $user_check_query = "SELECT * FROM users WHERE email='$email' LIMIT 1";
+  $user_check_query = "SELECT * FROM customers WHERE username='$username' OR email='$email' LIMIT 1";
   $result = mysqli_query($db, $user_check_query);
   $user = mysqli_fetch_assoc($result);
   
   if ($user) { // if user exists
+    if ($user['username'] === $username) {
+      array_push($errors, "Username already exists");
+    }
+
     if ($user['email'] === $email) {
       array_push($errors, "email already exists");
     }
@@ -44,19 +52,18 @@ if (isset($_POST['reg_userc'])) {
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO users (username, email, password, address) 
-  			  VALUES('$fullname', '$email', '$password' ,'$address')";
+  	$query = "INSERT INTO customers (username,fullname, email,phone,address, password) 
+  			  VALUES('$username','$fullname', '$email','$phone','$address', '$password')";
   	mysqli_query($db, $query);
-  	$_SESSION['fullname'] = $fullname;
+  	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now logged in";
   	header('location: index.php');
   }
 }
 
-// REGISTER USER
-if (isset($_POST['reg_userr'])) {
+if (isset($_POST['reg_restaurant'])) {
   // receive all input values from the form
-  $fullname = mysqli_real_escape_string($db, $_POST['fullname']);
+  $username = mysqli_real_escape_string($db, $_POST['username']);
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $address = mysqli_real_escape_string($db, $_POST['address']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
@@ -64,7 +71,7 @@ if (isset($_POST['reg_userr'])) {
 
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
-  if (empty($fullname)) { array_push($errors, "Fullname is required"); }
+  if (empty($username)) { array_push($errors, "Username is required"); }
   if (empty($email)) { array_push($errors, "Email is required"); }
   if (empty($password_1)) { array_push($errors, "Password is required"); }
   if ($password_1 != $password_2) {
@@ -73,13 +80,17 @@ if (isset($_POST['reg_userr'])) {
 
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email
-  $user_check_query = "SELECT * FROM users WHERE username='$fullname' LIMIT 1";
+  $user_check_query = "SELECT * FROM restaurants WHERE restaurantname='$username' OR email='$email' LIMIT 1";
   $result = mysqli_query($db, $user_check_query);
   $user = mysqli_fetch_assoc($result);
   
   if ($user) { // if user exists
-    if ($user['fullname'] === $fullname) {
+    if ($user['username'] === $username) {
       array_push($errors, "Username already exists");
+    }
+
+    if ($user['email'] === $email) {
+      array_push($errors, "email already exists");
     }
   }
 
@@ -87,17 +98,15 @@ if (isset($_POST['reg_userr'])) {
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO users (username, email, password, address) 
-  			  VALUES('$fullname', '$email', '$password' ,'$address')";
+  	$query = "INSERT INTO restaurants (email,restaurantname,address, password) 
+  			  VALUES('$email','$username','$address', '$password')";
   	mysqli_query($db, $query);
-  	$_SESSION['fullname'] = $fullname;
+  	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now logged in";
-  	header('location: index.php');
+  	header('location: restauranthomepage.php');
   }
 }
 
-
-// LOGIN USER
 if (isset($_POST['login_user'])) {
     $username = mysqli_real_escape_string($db, $_POST['username']);
     $password = mysqli_real_escape_string($db, $_POST['password']);
@@ -108,36 +117,61 @@ if (isset($_POST['login_user'])) {
     if (empty($password)) {
         array_push($errors, "Password is required");
     }
-    if (strpos($username, 'restaurant') !== false) {
-     
-    if (count($errors) == 0) {
+    if (strpos($username, 'Restaurant') !== false) {
+      if (count($errors) == 0) {
         $password = md5($password);
-        $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+        $query = "SELECT * FROM restaurants WHERE restaurantname='$username' AND password='$password'";
         $results = mysqli_query($db, $query);
         if (mysqli_num_rows($results) == 1) {
-          $_SESSION['email'] = $email;
+          $_SESSION['username'] = $username;
           $_SESSION['success'] = "You are now logged in";
-          header('location: restaurantindex.php');
+          header('location: restauranthomepage.php');
         }else {
-            array_push($errors, "Wrong email/password combination");
+            array_push($errors, "Wrong username/password combination");
         }
-      }
-    }
-        else{
-          if (count($errors) == 0) {
-            $password = md5($password);
-            $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-            $results = mysqli_query($db, $query);
-            if (mysqli_num_rows($results) == 1) {
-              $_SESSION['username'] = $email;
-              $_SESSION['success'] = "You are now logged in";
-              header('location: customerindex.php');
-            }else {
-                array_push($errors, "Wrong email/password combination");
-            }
-        }
-    }
-  
+    } 
+  }
+  else{
+if (count($errors) == 0) {
+  $password = md5($password);
+  $query = "SELECT * FROM customers WHERE username='$username' AND password='$password'";
+  $results = mysqli_query($db, $query);
+  if (mysqli_num_rows($results) == 1) {
+    $_SESSION['username'] = $username;
+    $_SESSION['success'] = "You are now logged in";
+    header('location: index.php');
+  }else {
+      array_push($errors, "Wrong username/password combination");
+  }
 }
-  ?>
+  }
+}
   
+  if (isset($_POST['login_admin'])) {
+    $username = mysqli_real_escape_string($db, $_POST['username']);
+    $password = mysqli_real_escape_string($db, $_POST['password']);
+  
+    if (empty($username)) {
+        array_push($errors, "Username is required");
+    }
+    if (empty($password)) {
+        array_push($errors, "Password is required");
+    }
+  
+    if (count($errors) == 0) {
+    
+        $query = "SELECT * FROM admins WHERE username='$username' AND password='$password'";
+        $results = mysqli_query($db, $query);
+        if (mysqli_num_rows($results) == 1) {
+          $_SESSION['username'] = $username;
+          $_SESSION['success'] = "You are now logged in";
+          header('location: adminhomepage.php');
+          
+         
+        }else {
+            array_push($errors, "Wrong username/password combination");
+        }
+    }
+  }
+  
+  ?>

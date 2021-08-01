@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Registration system PHP and MySQL</title>
+  <title>EATLK</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -10,15 +10,23 @@
   	<h2>Register</h2>
   </div>
 	
-  <form method="post" action="registerc.php">
+  <form method="post" action="customerregister.php">
   	<?php include('errors.php'); ?>
   	<div class="input-group">
-  	  <label>Fullname</label>
-  	  <input type="text" name="fullname" value="<?php echo $fullname; ?>">
+  	  <label>Username</label>
+  	  <input type="text" name="username" value="<?php echo $username; ?>">
   	</div>
   	<div class="input-group">
+  	  <label>Fullname</label>
+  	  <input type="fullname" name="fullname" value="<?php echo $fullname; ?>">
+  	</div>
+	  <div class="input-group">
   	  <label>Email</label>
   	  <input type="email" name="email" value="<?php echo $email; ?>">
+  	</div>
+	  <div class="input-group">
+  	  <label>Phone Number</label>
+  	  <input type="text" name="phone" value="<?php echo $phone; ?>">
   	</div>
 	  <div class="input-group">
   	  <label>Address</label>
@@ -33,9 +41,11 @@
   	  <input type="password" name="password_2">
   	</div>
   	<div class="input-group">
-  	  <a href="login.php"><button type="submit" class="btn" name="reg_userc">Register</button></a>
+  	  <button type="submit" class="btn" name="reg_customer">Register</button>
   	</div>
-  
+  	<p>
+  		Already a member? <a href="login.php">Sign in</a>
+  	</p>
   </form>
 </body>
 </html>
