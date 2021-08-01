@@ -18,7 +18,7 @@
   	</div>
   	<div class="input-group">
   	  <label>Restaurant Name ( This will be used as username so add restaurant location and Restaurant at the end; ex : KFCUnionPlaceRestaurant )</label>
-  	  <input type="username" name="username" value="<?php echo $fullname; ?>">
+  	  <input type="username" name="username" value="<?php echo $username; ?>">
   	</div>
 	  <div class="input-group">
   	  <label>Address</label>

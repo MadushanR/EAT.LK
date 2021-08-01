@@ -18,7 +18,7 @@
   	</div>
   	<div class="input-group">
   	  <label>Fullname</label>
-  	  <input type="fullname" name="fullname" value="<?php echo $fullname; ?>">
+  	  <input type="text" name="fullname" value="<?php echo $fullname; ?>">
   	</div>
 	  <div class="input-group">
   	  <label>Email</label>

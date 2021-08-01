@@ -26,7 +26,7 @@
     <!-- logged in user information -->
     <?php  if (isset($_SESSION['username'])) : ?>
     	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-    	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+    	<p> <a href="login.php?logout='1'" style="color: red;">logout</a> </p>
 		<form action="profile.php" method="POST">
 		<p> <a href="customerprofile.php" style="color: red;">profile</a> </p>
 		</form>
