@@ -25,13 +25,15 @@
 
     <!-- logged in user information -->
     <?php  if (isset($_SESSION['username'])) : ?>
-    	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+    	<p>Welcome Restaurant <strong><?php echo $_SESSION['username']; ?></strong></p>
     	<p> <a href="login.php?logout='1'" style="color: red;">logout</a> </p>
 		<form action="restaurantprofile.php" method="POST">
-		<p> <a href="restaurantprofile.php" style="color: red;">profile</a> </p>
+		<p> <a href="restaurantprofile.php" style="color: red;">profile</a> </p>	
 		</form>
-    <?php endif ?>
-</div>
-		
+		<p> <a href="addfood.php" style="color: red;">Add Food</a> </p>
+		<form action="viewfood.php" method="POST">
+      <button type="submit" class="btn" name="viewfood">View Foods</button>
+      </form> 
+		<?php endif ?>
 </body>
 </html>
