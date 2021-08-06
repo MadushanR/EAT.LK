@@ -1,68 +1,159 @@
-* {
-  margin: 0px;
-  padding: 0px;
+.main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./images/bgimg.jpg");
+    background-size: cover;
 }
-body {
-  font-size: 120%;
-  background: #F8F8FF;
+.main .login {
+    width: 40%;
+    background: #fff;
+    box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 27px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 90px 0px;
 }
+.main .login_form {
+    width: 50%;
+    margin: auto;
+}
+.main .login_form .logo img {
+    width: 20%;
+    position: absolute;
+    top: -45px;
+    left: 40%;
+}
+.main .login_form .header {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 37px;
+    color: #000;
+    text-align: center;
+}
+.main .login_form .form-group {
+    margin-bottom: 25px;
+}
+.main .login_form .form-group input, .main .login_form .form-group label {
+    width: 100%;
+}
+.main .login_form .form-group label {
+    font-size: 0.95em;
+}
+.main .login_form .form-group input {
+    border: 2px solid #e4e4e4;
+}
+.main .login_form .forgotPs {
+    display: block;
+    text-align: right;
+    color: #f4e022;
+    text-decoration: none;
+    font-weight: 400;
+    font-family: poppins;
+}
+.main .login_form .loginBtn {
+    background: #f4e022;
+    color: black;
+    padding: 5px 30px;
+    border-radius: 30px;
+    border: none;
+    float: right;
+    margin-top: 30px;
+    font-family: poppins;
+}
+.main .login .createAc {
+    margin-top: 30px;
+    margin-bottom: -50px;
+    font-size: 20px;
+    line-height: 30px;
+    display: block;
+    font-family: poppins;
+}
+.main .login .createAc a {
+    text-decoration: none;
+    color: #f4e022;
+    font-family: poppins;
+    font-size: 20px;
+}
+.adminlogin a {
+    text-decoration: none;
+    color:#f4e022;
+    font-size:20px;
+    font-weight:bold;
+}
+/*homepage styles*/
 
-.header {
-  width: 30%;
-  margin: 50px auto 0px;
-  color: white;
-  background: #5F9EA0;
-  text-align: center;
-  border: 1px solid #B0C4DE;
-  border-bottom: none;
-  border-radius: 10px 10px 0px 0px;
-  padding: 20px;
+/* .header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url("");
+    background-size: cover;
+    min-height: 400px;
+    z-index: 111;
 }
-form, .content {
-  width: 30%;
-  margin: 0px auto;
-  padding: 20px;
-  border: 1px solid #B0C4DE;
-  background: white;
-  border-radius: 0px 0px 10px 10px;
+.header .navbar {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 36px;
 }
-.input-group {
-  margin: 10px 0px 10px 0px;
+.header .navbar .logo img {
+    z-index: 22222;
+    width: 100px;
+    padding: 15 15px;
 }
-.input-group label {
-  display: block;
-  text-align: left;
-  margin: 3px;
+.header .navbar .navmenu {
+    display: flex;
+    flex: 1;
+    margin-left: 20px;
+    align-items: center;
 }
-.input-group input {
-  height: 30px;
-  width: 93%;
-  padding: 5px 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid gray;
+.header .navbar .navmenu a {
+    display: flex;
+    align-items: center;
+    padding: 15px 15px;
+    cursor: pointer;
+    color: white;
+    background: black;
+    margin-right: 20px;
+    border-radius: 20px;
 }
-.btn {
-  padding: 10px;
-  font-size: 15px;
-  color: white;
-  background: #5F9EA0;
-  border: none;
-  border-radius: 5px;
+.header .navbar .navmenu a span {
+    font-size: 13px;
+    position: relative;
+    font-family: poppins;
 }
-.error {
-  width: 92%; 
-  margin: 0px auto; 
-  padding: 10px; 
-  border: 1px solid #a94442; 
-  color: #a94442; 
-  background: #f2dede; 
-  border-radius: 5px; 
-  text-align: left;
+.header .navbar .navmenu a span:after {
+    content: "";
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    transform-origin: left center;
+    transition: all 250ms;
+    opacity: 0;
+    transform: scaleX(0);
 }
-.success {
-  color: #3c763d; 
-  background: #dff0d8; 
-  border: 1px solid #3c763d;
-  margin-bottom: 20px;
+.header .navbar .navmenu a:hover span:after {
+    transform: scaleX(1);
+    opacity: 1;
 }
+.header .userImg img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.header .mainBanner {
+    margin: 100px auto;
+    max-width: 600px;
+    font-size: 40px;
+    font-family: poppins;
+    font-weight: bold;
+} */
