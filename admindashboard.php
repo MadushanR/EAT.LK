@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin DashBoard</title>
     <link rel="stylesheet" href="admin.css">
+    <title>Admin DashBoard</title>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
@@ -39,49 +41,18 @@
 
 
                 </ul>
-                <a href="login.php?logout='1'">
-                    <button>
-                        <span class="material-icons">
-                            backspace
-                        </span>
-                        LOGOUT
-                    </button>
-                </a>
+                <button>
+                    <span class="material-icons">
+                        backspace
+                    </span>
+                    LOGOUT
+                </button>
             </div>
         </div>
         <div class="space-content">
             <div class="nav-space"></div>
             <div class="content">
-                <?php 
-$username = "root"; 
-$password = ""; 
-$database = "eatlk"; 
-$mysqli = new mysqli("localhost", $username, $password, $database); 
-$query = "SELECT * FROM restaurants";
 
-
-echo '<table width="100%"> 
-      <tr> 
-          <td> <font face="Arial">Username / Restaurant Name</font></td> 
-          <td> <font face="Arial">Email</font> </td> 
-          <td> <font face="Arial">Address</font> </td> 
-      </tr>';
-
-if ($result = $mysqli->query($query)) {
-    while ($row = $result->fetch_assoc()) {
-        $field1name = $row["restaurantname"];
-        $field2name = $row["email"];
-        $field3name = $row["address"]; 
-
-        echo '<tr> 
-                  <td>'.$field1name.'</td> 
-                  <td>'.$field2name.'</td> 
-                  <td>'.$field3name.'</td> 
-              </tr>';
-    }
-    $result->free();
-} 
-?>
             </div>
         </div>
     </div>
