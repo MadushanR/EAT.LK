@@ -4,7 +4,7 @@ $errors = array(); ?>
 <html>
 <head>
   <title>EATLK</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="customerprofile.css">
 </head>
 <body>
   <div class="header">
@@ -40,6 +40,7 @@ $db = mysqli_connect('localhost', 'root', '', 'eatlk');
       <button name="save" class="btn btn-primary">Save</button>
 	  
       <button name="delete" class="btn btn-primary">Delete</button>
+      <button name="back" class="btn btn-primary"><a href="restauranthomepage.php">Back</a></button>
 	  <?php
 	  
 if (isset($_POST['save'])) {

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="admin.css">
-    <title>Admin DashBoard</title>
+    <title>Admin Homepage</title>
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -17,11 +17,7 @@
         <div class="nav-cont">
             <div class="admin-nav">
                 <ul>
-                    <li>
-                        <h3>
-                            <a>Dashboard</a>
-                        </h3>
-                    </li>
+                    
                     <li>
                         <a href="adminrestaurantview.php">
                             <span class="material-icons">

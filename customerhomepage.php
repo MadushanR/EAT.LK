@@ -17,28 +17,6 @@
 </head>
 
 <body>
-
-    <div class="content">
-        <!-- notification message -->
-        <?php if (isset($_SESSION['success'])) : ?>
-        <div class="error success">
-            <h3>
-                <?php 
-          	echo $_SESSION['success']; 
-          	unset($_SESSION['success']);
-          ?>
-            </h3>
-        </div>
-        <?php endif ?>
-
-        <!-- logged in user information -->
-        <!-- <?php  if (isset($_SESSION['username'])) : ?>
-        <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-        <p> <a href="login.php?logout='1'" style="color: red;">logout</a> </p>
-        <form action="customerprofile.php" method="POST">
-            <p> <a href="customerprofile.php" style="color: red;">profile</a> </p>
-        </form>
-        <?php endif ?> -->
     </div>
     <div class="Header">
         <div class="navbar">
@@ -51,9 +29,6 @@
                 </a>
                 <a>
                     <span>CONTACT US</span>
-                </a>
-                <a href="login.php">
-                    <span>SIGN IN</span>
                 </a>
                 <a href="customerprofile.php" method="POST">
                     <span>VIEW PROFILE</span>

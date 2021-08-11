@@ -3,7 +3,7 @@
 <html>
 <head>
   <title>EATLK</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="customerprofile.css">
 </head>
 <body>
   <div class="header">
