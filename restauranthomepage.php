@@ -1,39 +1,54 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <title></title>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
+
 <body>
-
-<div class="header">
-	<h2>Home Page</h2>
-</div>
-<div class="content">
-  	<!-- notification message -->
-  	<?php if (isset($_SESSION['success'])) : ?>
-      <div class="error success" >
-      	<h3>
-          <?php 
-          	echo $_SESSION['success']; 
-          	unset($_SESSION['success']);
-          ?>
-      	</h3>
-      </div>
-  	<?php endif ?>
-
-    <!-- logged in user information -->
-    <?php  if (isset($_SESSION['username'])) : ?>
-    	<p>Welcome Restaurant <strong><?php echo $_SESSION['username']; ?></strong></p>
-    	<p> <a href="login.php?logout='1'" style="color: red;">logout</a> </p>
+    <div class="dashboard">
+        <div class="nav-cont">
+            <div class="admin-nav">
+				
 		<form action="restaurantprofile.php" method="POST">
-		<p> <a href="restaurantprofile.php" style="color: red;">profile</a> </p>	
-		</form>
-		<p> <a href="addfood.php" style="color: red;">Add Food</a> </p>
-		<form action="viewfood.php" method="POST">
-      <button type="submit" class="btn" name="viewfood">View Foods</button>
-      </form> 
-		<?php endif ?>
+                <ul>
+                    <li>
+							<form action="restaurantprofile.php" method="POST">
+							<p> <a href="restaurantprofile.php">Profile</a> </p>	
+							</form>                        
+                            
+                    </li>
+					<li>
+							<form action="viewfood.php" method="POST">
+							<p> <a href="viewfood.php">View Foods</a> </p>	
+							</form>                        
+                            
+                    </li>
+                    <li>
+					<p> <a href="addfood.php">Add Food</a> </p>
+                    </li>
+					<li>
+					<p> <a href="login.php">Logout</a> </p>
+                    </li>
+
+                </ul>
+               
+            </div>
+        </div>
+        <div class="space-content">
+            <div class="nav-space"></div>
+            <div class="content">
+
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
