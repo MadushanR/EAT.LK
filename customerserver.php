@@ -36,4 +36,8 @@ if (isset($_POST['save'])) {
         mysqli_query($db, $query);
         header('location: login.php');    
   }
+  if (isset($_POST['back'])) {
+ //takes customer to homepage
+        header('location: customerhomepage.php');    
+  }
 	  ?>

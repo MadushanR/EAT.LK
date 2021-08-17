@@ -7,6 +7,8 @@ $fullname    = "";
 $email = "";
 $phone    = "";
 $address = "";
+$restaurant="";
+$description="";
 $errors = array(); 
 
 // connect to the database
@@ -64,10 +66,14 @@ if (isset($_POST['reg_customer'])) {
 if (isset($_POST['reg_restaurant'])) {
   // receive all input values from the form
   $username = mysqli_real_escape_string($db, $_POST['username']);
+  $restaurant = mysqli_real_escape_string($db, $_POST['restaurant']);
   $email = mysqli_real_escape_string($db, $_POST['email']);
+  $phone = mysqli_real_escape_string($db, $_POST['phone']);
   $address = mysqli_real_escape_string($db, $_POST['address']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
+  $description = mysqli_real_escape_string($db, $_POST['description']);
+  $rimage=$_FILES['restaurantpic']['name'];
 
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
@@ -97,15 +103,19 @@ if (isset($_POST['reg_restaurant'])) {
   // Finally, register user if there are no errors in the form
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
+    mysqli_query($db,"INSERT INTO restaurants (email,restaurantname,address,password,phone,restaurant,rimage,description) 
+    VALUES('$email','$username','$address', '$password', '$phone', '$restaurant', '$rimage','$description')");   
+    mkdir("images/restaurant");
+    mkdir("images/restaurant/$username");
+    mkdir("images/restaurant/$username/logo");
+    move_uploaded_file($_FILES['restaurantpic']['tmp_name'],"images/restaurant/$username/logo/".$_FILES['restaurantpic']['name']);
 
-  	$query = "INSERT INTO restaurants (email,restaurantname,address, password) 
-  			  VALUES('$email','$username','$address', '$password')";
-  	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now logged in";
   	header('location: restauranthomepage.php');
   }
 }
+
 
 if (isset($_POST['login_user'])) {
     $username = mysqli_real_escape_string($db, $_POST['username']);

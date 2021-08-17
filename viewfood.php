@@ -1,12 +1,16 @@
 <?php session_start();?>
 <html>
 <body>
+	<head>
+	<link rel="stylesheet" href="viewfood.css">
+	</head>
 <table border="1" bordercolor="#F0F0F0" cellpadding="20px">
 			 <th>Food Name</th>
-             <th>Description</th>
+			 <th>Image</th>
+             <th>Description</th> 
 			 <th>Cost</th>
-			 <th>Delete Item</th>
-			 <th>Update item Details</th>
+			 <th>Type</th>
+			 
 			   <?php
 					  $mysqli = new mysqli("localhost", "root", "", "eatlk"); 
                       $restaurantname = mysqli_real_escape_string($mysqli, $_SESSION['username']);
@@ -15,13 +19,15 @@
                         while ($row = $result->fetch_assoc()) {
 							 ?>
 			     <tr>
-				<td align="center" style="width:150px;"><?php  echo $row['foodname']."<br>";?></td>
-                <td align="center" style="width:150px;"><?php  echo $row['description']."<br>";?></td>	
-				<td align="center" style="width:150px;"><?php  echo $row['cost']."<br>";?></td>				
-				<td align="center" style="width:150px;">
+				<td><?php  echo $row['foodname']."<br>";?></td>
+				<td><img src="<?php echo 'images/restaurant/'.$restaurantname.'/food/'.$row['image'];?>" height="100px" width="150px"></td>
+                <td><?php  echo $row['description']."<br>";?></td>	
+				<td ><?php  echo $row['cost']."<br>";?></td>		
+				<td><?php  echo $row['type']."<br>";?></td>			
+				<td >
 				<a href="deletefood.php?id=<?php echo $row['id'];?>"><button type="button" class="btn btn-warning">Delete</button></a>
 				</td>
-				<td align="center" style="width:150px;">
+				<td >
 				<a href="update.php?id=<?php echo $row['id'];?>"><button type="button" class="btn btn-danger">Update</button></a>
 				</td>
 				</tr>
@@ -33,6 +39,8 @@
                         }
 					  ?>
 			 </table>
+			 <br>
+			 <a href="restauranthomepage.php"><button type="submit">Back</button></a>
 </body>
-<a href="restauranthomepage.php"><button type="submit">Back</button></a>
+
 </html>

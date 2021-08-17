@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,6 +21,23 @@
 		<form action="restaurantprofile.php" method="POST">
                 <ul>
                     <li>
+                    <?php
+					  $mysqli = new mysqli("localhost", "root", "", "eatlk"); 
+                      $restaurantname = mysqli_real_escape_string($mysqli, $_SESSION['username']);
+                      $query = "SELECT * FROM restaurants where restaurantname='$restaurantname'";
+                      if ($result = $mysqli->query($query)) {
+                        while ($row = $result->fetch_assoc()) {
+							 ?>    
+                             <p><?php echo $row['restaurant'];?></p>         			
+                <img src="<?php echo 'images/restaurant/'.$restaurantname.'/logo/'.$row['rimage'];?>" height="100px" width="150px">
+                
+
+<?php
+$rimage="";
+                        }
+                    }?>
+                    </li>
+                    <li>
 							<form action="restaurantprofile.php" method="POST">
 							<p> <a href="restaurantprofile.php">Profile</a> </p>	
 							</form>                        
@@ -41,6 +59,7 @@
                 </ul>
                
             </div>
+            
         </div>
         <div class="space-content">
             <div class="nav-space"></div>

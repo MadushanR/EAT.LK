@@ -40,6 +40,25 @@
             The best platform to discover nearby restaurants
         </div>
     </div>
+    <?php
+    session_start();
+    $db = mysqli_connect('localhost', 'root', '', 'eatlk');
+    $errors = array(); 
+    if (count($errors) == 0) {
+    $query = "SELECT * FROM restaurants";
+        $results = mysqli_query($db, $query);?>
+        <?php
+        if (mysqli_num_rows($results)> 0) {
+            foreach($results as $row)
+            {?>
+<div>
+    <?php echo $row['restaurant'];?>
+</div>
+ <?php
+            }
+        }
+    }
+            ?>
     <div class="container">
         <div class="card-section">
             <div class="row">

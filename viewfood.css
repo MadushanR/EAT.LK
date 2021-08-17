@@ -1,0 +1,32 @@
+*{ 
+font-family: Poppins;
+font-size: 20px;
+}
+td{
+    text-align: center;
+    width: 150px;
+}
+body {
+    min-height: 100vh;
+    
+    background-image: url("./images/bgimg.jpg");
+    background-size: cover;
+}
+table{
+    width: 100%;
+    border: none;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+td,th{
+    border: none;
+    background: rgba(255, 255, 255, 0.3);
+    
+}
+
+button{
+    background: #f4e022;
+    font-family: poppins;
+    padding: 15px 30px;
+    border: none;
+}

@@ -47,18 +47,17 @@
     </div>
     <?php
     $db = mysqli_connect('localhost', 'root', '', 'eatlk');
+    $restaurant=$_GET['restaurant'];
     $errors = array(); 
+    
     if (count($errors) == 0) {
-    $query = "SELECT * FROM restaurants";
+        
+    $query = "SELECT * FROM foods where  restaurantname='$restaurant'";
         $results = mysqli_query($db, $query);?>
         <?php
         if (mysqli_num_rows($results)> 0) {
             foreach($results as $row)
             {?>
-
-                    <?php
-    $restaurantname = $row['restaurantname'];
-    ?>
                         </div>
     
 
@@ -69,18 +68,16 @@
                 <div class="col-4">
                     <div class="res-card">
                         <div class="image-section">
-                        <img src="<?php echo 'images/restaurant/'.$restaurantname.'/logo/'.$row['rimage'];?>">
+                        <img src="<?php echo 'images/restaurant/'.$restaurantname.'/food/'.$row['image'];?>">
                         </div>
                         <div class="detail-section">
-                            <div class="res-name"><?php echo $row['restaurant'];?></div>
+                            <div class="res-name"><?php echo $row['foodname'];?></div>
                         </div>
                         <div class="container">
 
                         </div>
                         <div class="card-bottom">
-                            <a href="customerviewfood.php?id=<?php echo $row['restaurant'];?>" class="cust-button fullWidthNoBorderOrange">
-
-                                VIEW MENU
+                                Add to Order
                             </a>
                         </div>
                     </div>

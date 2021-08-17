@@ -34,6 +34,11 @@
                             View Customers
                         </a>
                     </li>
+                    <li>
+                    <form action="adminprofile.php" method="POST">
+							<p> <a href="adminprofile.php">View Foods</a> </p>	
+							</form>   
+                    </li>
 
 
                 </ul>

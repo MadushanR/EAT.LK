@@ -7,13 +7,15 @@ if(isset($_SESSION['username']))
 {
 $q=mysqli_query($con,"SELECT * FROM foods where id='$id'");
 $res=mysqli_fetch_assoc($q);
-
+$pic=$res['image'];
+$un=$res['restaurantname'];
+unlink("images/restaurant/$un/food/$pic");
 if(mysqli_query($con,"delete from foods where id='$id' "))
 {
 	
 	
 
-    header( "refresh:5;url=viewfood.php" );
+    header( "location:viewfood.php" );
  
 
 	

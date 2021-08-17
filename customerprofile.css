@@ -4,15 +4,21 @@
   }
   body {
     font-size: 120%;
-    background: #F8F8FF;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./images/bgimg.jpg");
+    background-size: cover;
   }
+
   a{
-      color: white;
-      text-decoration: none;
+      color: black;
+      
   }
+
   .header {
     width: 30%;
-    margin: 50px auto 0px;
+    margin: 0px auto 0px;
     color: white;
     background: #f4e022;
     text-align: center;
@@ -48,7 +54,7 @@
   .btn {
     padding: 10px;
     font-size: 15px;
-    color: white;
+    color: black;
     background: #f4e022;
     border: none;
     border-radius: 5px;
@@ -69,3 +75,14 @@
     border: 1px solid #3c763d;
     margin-bottom: 20px;
   }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
