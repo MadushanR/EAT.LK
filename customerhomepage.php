@@ -78,7 +78,7 @@
 
                         </div>
                         <div class="card-bottom">
-                            <a href="customerviewfood.php?id=<?php echo $row['restaurant'];?>" class="cust-button fullWidthNoBorderOrange">
+                            <a href="customerviewfood.php?restaurantname=<?php echo $row['restaurantname'];?>" class="cust-button fullWidthNoBorderOrange">
 
                                 VIEW MENU
                             </a>

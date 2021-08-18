@@ -47,12 +47,12 @@
     </div>
     <?php
     $db = mysqli_connect('localhost', 'root', '', 'eatlk');
-    $restaurant=$_GET['restaurant'];
+    $restaurantname=$_GET['restaurantname'];
     $errors = array(); 
     
     if (count($errors) == 0) {
         
-    $query = "SELECT * FROM foods where  restaurantname='$restaurant'";
+    $query = "SELECT * FROM foods where  restaurantname='$restaurantname'";
         $results = mysqli_query($db, $query);?>
         <?php
         if (mysqli_num_rows($results)> 0) {

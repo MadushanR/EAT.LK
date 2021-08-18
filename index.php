@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +17,7 @@
 </head>
 
 <body>
+    </div>
     <div class="Header">
         <div class="navbar">
             <div class="logo">
@@ -28,8 +30,11 @@
                 <a>
                     <span>CONTACT US</span>
                 </a>
-                <a href="login.php">
-                    <span>SIGN IN</span>
+                <a href="customerprofile.php" method="POST">
+                    <span>VIEW PROFILE</span>
+                </a>
+                <a href="login.php?logout='1'">
+                    <span>LOGIN</span>
                 </a>
             </div>
             <!-- <div class="userImg">
@@ -41,7 +46,6 @@
         </div>
     </div>
     <?php
-    session_start();
     $db = mysqli_connect('localhost', 'root', '', 'eatlk');
     $errors = array(); 
     if (count($errors) == 0) {
@@ -51,89 +55,48 @@
         if (mysqli_num_rows($results)> 0) {
             foreach($results as $row)
             {?>
-<div>
-    <?php echo $row['restaurant'];?>
-</div>
- <?php
-            }
-        }
-    }
-            ?>
+
+                    <?php
+    $restaurantname = $row['restaurantname'];
+    ?>
+                        </div>
+    
+
+
     <div class="container">
         <div class="card-section">
             <div class="row">
                 <div class="col-4">
                     <div class="res-card">
                         <div class="image-section">
-                            <img src="./images/istockphoto-1083487948-612x612.jpg" alt="Snow" />
+                        <img src="<?php echo 'images/restaurant/'.$restaurantname.'/logo/'.$row['rimage'];?>">
                         </div>
                         <div class="detail-section">
-                            <div class="res-name"> Pizza Hut</div>
-                            <div class="res-description">
-                                The best pizza delivery place in town
-                            </div>
+                            <div class="res-name"><?php echo $row['restaurant'];?></div>
                         </div>
                         <div class="container">
 
                         </div>
                         <div class="card-bottom">
-                            <a class="cust-button fullWidthNoBorderOrange">
+                            <a href="customerviewfood.php?restaurant=<?php echo $row['restaurant'];?>" class="cust-button fullWidthNoBorderOrange">
                                 VIEW MENU
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
-                    <div class="res-card">
-                        <div class="image-section">
-                            <img src="./images/chinese dragon.jpg" alt="Snow" />
-                        </div>
-                        <div class="detail-section">
-                            <div class="res-name"> Chinese Dragon</div>
-                            <div class="res-description">
-                                Chinese Dragon Cafe have been the pioneer of Authentic Chinese Food in Colombo since
-                                1942. With a heritage of 76 years, you're bound to have a truly great Chinese
-                                Experience.
-                            </div>
-                        </div>
-                        <div class="container">
-
-                        </div>
-                        <div class="card-bottom">
-                            <a class="cust-button fullWidthNoBorderOrange">
-                                VIEW MENU
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="res-card">
-                        <div class="image-section">
-                            <img src="./images/burger king.png" alt="Snow" />
-                        </div>
-                        <div class="detail-section">
-                            <div class="res-name"> Burger King</div>
-                            <div class="res-description">
-                                Discover our menu and order delivery or pick up from a
-                                Burger King near you.
-                            </div>
-                        </div>
-                        <div class="container">
-
-                        </div>
-                        <div class="card-bottom">
-                            <a class="cust-button fullWidthNoBorderOrange">
-                                VIEW MENU
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                
 
 
             </div>
         </div>
+    </div>  
 
-    </div>
+   
+ <?php
+            }
+        }
+    }
+            ?>
     <footer class="footer">
         <div class="container">
             <div class="row">
