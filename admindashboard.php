@@ -17,7 +17,7 @@
         <div class="nav-cont">
             <div class="admin-nav">
                 <ul>
-                   
+
                     <li>
                         <a href="adminrestaurantview.php">
                             <span class="material-icons">
@@ -34,15 +34,19 @@
                             View Customers
                         </a>
                     </li>
+                    <li>
 
+                        <a href="login.php?logout='1'">
+                            <span class="material-icons">
+                                backspace
+                            </span>
+                            LOGOUT
+
+                        </a>
+                    </li>
 
                 </ul>
-                <button>
-                    <span class="material-icons">
-                        backspace
-                    </span>
-                    LOGOUT
-                </button>
+
             </div>
         </div>
         <div class="space-content">
