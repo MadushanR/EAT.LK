@@ -61,6 +61,12 @@
 
     </div>
 
+
+
+
+    <div class="container">
+        <div class="card-section">
+            <div class="row">          
     <?php
     $db = mysqli_connect('localhost', 'root', '', 'eatlk');
     $errors = array(); 
@@ -70,17 +76,9 @@
     <?php
         if (mysqli_num_rows($results)> 0) {
             foreach($results as $row)
-            {?>
-
-    <?php
+            {
     $restaurantname = $row['restaurantname'];
     ?>
-
-
-
-    <div class="container">
-        <div class="card-section">
-            <div class="row">
                 <div class="col-4">
                     <div class="res-card">
                         <div class="image-section">
@@ -102,16 +100,17 @@
                         </div>
                     </div>
                 </div>
+                <?php
+            }
+        }
+    }
+            ?>
             </div>
         </div>
     </div>
 
 
-    <?php
-            }
-        }
-    }
-            ?>
+  
     <footer class="footer">
         <div class="container">
             <div class="row">
