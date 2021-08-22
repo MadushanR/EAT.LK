@@ -1,17 +1,21 @@
-<?php session_start(); 
-$restaurantname=$_GET['restaurantname'];
-require_once("dbcontroller.php");
-$db_handle = new DBController();
-if(!empty($_GET["action"])) {
-switch($_GET["action"]) {
-	case "add":
-		if(!empty($_POST["quantity"])) {
-			$productByCode = $db_handle->runQuery("SELECT * FROM foods WHERE foodname='" . $_GET["foodname"] . "'");
-			$itemArray = array($productByCode[0]["foodname"]=>array('foodname'=>$productByCode[0]["foodname"], 'cost'=>$productByCode[0]["cost"], 'quantity'=>$_POST["quantity"],'image'=>$productByCode[0]["image"]));			
+<?php 
+session_start();
+$db = mysqli_connect('localhost', 'root', '', 'eatlk');
+$errors = array(); 
+
+if (isset($_POST['add'])) {
+    
+    if(!empty($_POST["quantity"])) {
+        $query = "SELECT * FROM foods WHERE foodname='" . $_GET["foodname"] . "'";
+        $results = mysqli_query($db, $query);
+        if (mysqli_num_rows($results)> 0) {
+            foreach($results as $row)
+            {
+        $itemArray = array($row[0]["foodname"]=>array('foodname'=>$row[0]["foodname"], 'cost'=>$row[0]["cost"], 'quantity'=>$_POST["quantity"],'image'=>$row[0]["image"]));			
 			if(!empty($_SESSION["cart_item"])) {
-				if(in_array($productByCode[0]["foodname"],array_keys($_SESSION["cart_item"]))) {
+				if(in_array($results[0]["foodname"],array_keys($_SESSION["cart_item"]))) {
 					foreach($_SESSION["cart_item"] as $k => $v) {
-							if($productByCode[0]["foodname"] == $k) {
+							if($results[0]["foodname"] == $k) {
 								if(empty($_SESSION["cart_item"][$k]["quantity"])) {
 									$_SESSION["cart_item"][$k]["quantity"] = 0;
 								}
@@ -24,27 +28,31 @@ switch($_GET["action"]) {
 			} else {
 				$_SESSION["cart_item"] = $itemArray;
 			}
-		}
-	break;
-	case "remove":
-		if(!empty($_SESSION["cart_item"])) {
-			foreach($_SESSION["cart_item"] as $k => $v) {
-					if($_GET["foodname"] == $k)
-						unset($_SESSION["cart_item"][$k]);				
-					if(empty($_SESSION["cart_item"]))
-						unset($_SESSION["cart_item"]);
-			}
-		}
-	break;
-	case "empty":
-		unset($_SESSION["cart_item"]);
-	break;	
+        }
+    }
+    }
 }
+
+if (isset($_POST['remove'])) {
+    if(!empty($_SESSION["cart_item"])) {
+        foreach($_SESSION["cart_item"] as $k => $v) {
+                if($_GET["foodname"] == $k)
+                    unset($_SESSION["cart_item"][$k]);				
+                if(empty($_SESSION["cart_item"]))
+                    unset($_SESSION["cart_item"]);
+        }
+    }
 }
+
+if (isset($_POST['empty'])) {
+unset($_SESSION["cart_item"]);
+}
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -58,7 +66,6 @@ switch($_GET["action"]) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
-
 <body>
     </div>
     <div class="Header">
@@ -91,9 +98,9 @@ switch($_GET["action"]) {
 </div>
 <div id="shopping-cart">
 <div class="txt-heading">Shopping Cart</div>
+<a id="btnEmpty" href="customerviewfood.php?action=empty">Empty Cart</a>
+<?php  
 
-<a id="btnEmpty" href="customerviewfood.php?action=empty&restaurantname=<?php echo $restaurantname ?>">Empty Cart</a>
-<?php
 if(isset($_SESSION["cart_item"])){
     $total_quantity = 0;
     $total_price = 0;
@@ -112,11 +119,10 @@ if(isset($_SESSION["cart_item"])){
         $item_price = $item["quantity"]*$item["cost"];
 		?>
 				<tr>
-				<td><?php echo $item["foodname"]; ?></td>
 				<td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
 				<td  style="text-align:right;"><?php echo "$ ".$item["cost"]; ?></td>
 				<td  style="text-align:right;"><?php echo "$ ". number_format($item_price,2); ?></td>
-				<td style="text-align:center;"><a href="customerviewfood.php?action=remove&foodname=<?php echo $item["foodname"];?>&restaurantname=<?php echo $restaurantname; ?>" class="btnRemoveAction"><img src="images\icon-delete.png" alt="Remove Item" /></a></td>
+				<td style="text-align:center;"><a href="customerviewfood.php?action=remove&foodname=<?php echo $item["foodname"]; ?>" class="btnRemoveAction"><img src="images\icon-delete.png" alt="Remove Item" /></a></td>
 				</tr>
 				<?php
 				$total_quantity += $item["quantity"];
@@ -141,24 +147,21 @@ if(isset($_SESSION["cart_item"])){
 ?>
 </div>
 
+
     <div class="container">
         <div class="card-section">
             <div class="row">
             <?php
-    $db = mysqli_connect('localhost', 'root', '', 'eatlk');
-  
-    $errors = array(); 
-   
+            $restaurantname=$_GET['restaurantname'];
     if (count($errors) == 0) {
-        
+      
     $query = "SELECT * FROM foods where  restaurantname='$restaurantname'";
-        $results = mysqli_query($db, $query);?>
-        <?php
+        $results = mysqli_query($db, $query);
         if (mysqli_num_rows($results)> 0) {
             foreach($results as $row)
             {?>
                 <div class="col-4">
-                <form method="post" action="customerviewfood.php?action=add&foodname=<?php echo $row['foodname']; ?>&restaurantname=<?php echo $row['restaurantname']; ?>">
+                <form method="post" action="customerviewfood.php">
                     <div class="res-card">
                         <div class="image-section">
                         <img src="<?php echo 'images/restaurant/'.$restaurantname.'/food/'.$row['image'];?>">
@@ -171,8 +174,8 @@ if(isset($_SESSION["cart_item"])){
 
                         </div>
                         <div class="card-bottom">
-                        <div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
-                           
+                        <div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><a href="customerviewfood.php?foodname=<?php echo $row['foodname'];?>"><input type="submit" value="Add to Cart" class="btnAddAction" /></a></div>
+                            </a>
                         </div>
                         </form>
                     </div>
