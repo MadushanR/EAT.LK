@@ -100,6 +100,42 @@ if ($result = $mysqli->query($query)) {
         </div>
     </div>
 
+
+    <div class="container">
+        <h2>Restaurant List <small>Registered</small></h2>
+        <ul class="responsive-table">
+            <li class="table-header">
+                <div class="col col-4">Username/ Restaurant Name</div>
+                <div class="col col-4">Email</div>
+                <div class="col col-4">Address</div>
+            </li>
+            <li class="table-row">
+                <div class="col col-4" data-label="Username">42235</div>
+                <div class="col col-4" data-label="Email">John Doe</div>
+                <div class="col col-4" data-label="Address">$350</div>
+
+            </li>
+            <li class="table-row">
+                <div class="col col-4" data-label="Username">42235</div>
+                <div class="col col-4" data-label="Email">John Doe</div>
+                <div class="col col-4" data-label="Address">$350</div>
+
+            </li>
+            <li class="table-row">
+                <div class="col col-4" data-label="Username">42235</div>
+                <div class="col col-4" data-label="Email">John Doe</div>
+                <div class="col col-4" data-label="Address">$350</div>
+
+            </li>
+            <li class="table-row">
+                <div class="col col-4" data-label="Username">42235</div>
+                <div class="col col-4" data-label="Email">John Doe</div>
+                <div class="col col-4" data-label="Address">$350</div>
+
+            </li>
+        </ul>
+    </div>
+
 </body>
 
 </html>
