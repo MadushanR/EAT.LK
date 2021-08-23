@@ -33,26 +33,7 @@
                     <i class="fa fa-bars"></i>
                 </a>
             </div>
-            <!-- <div class="navmenu" id="myNavmenu">
-                <a>
-                    <span>ABOUT US</span>
-                </a>
-                <a>
-                    <span>CONTACT US</span>
-                </a>
-                <a href="customerprofile.php" method="POST">
-                    <span>VIEW PROFILE</span>
-                </a>
-                <a href="login.php?logout='1'">
-                    <span>LOGOUT</span>
-                </a>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <i class="fa fa-bars"></i>
-                </a>
-            </div> -->
-            <!-- <div class="userImg">
-                <img src="../../assets/images/dfsfsfs.png" alt="">
-            </div> -->
+
         </div>
         <div class="mainBanner">
             The best platform to discover nearby restaurants
@@ -66,20 +47,20 @@
 
     <div class="container">
         <div class="card-section">
-            <div class="row">          
-    <?php
+            <div class="row">
+                <?php
     $db = mysqli_connect('localhost', 'root', '', 'eatlk');
     $errors = array(); 
    if (count($errors) == 0) {
    $query = "SELECT * FROM restaurants";
        $results = mysqli_query($db, $query);?>
-    <?php
+                <?php
         if (mysqli_num_rows($results)> 0) {
             foreach($results as $row)
             {
     $restaurantname = $row['restaurantname'];
     ?>
-                <div class="col-4">
+                <div class="col-md-4 col-sm-4">
                     <div class="res-card">
                         <div class="image-section">
                             <img src="<?php echo 'images/restaurant/'.$restaurantname.'/logo/'.$row['rimage'];?>">
@@ -92,7 +73,8 @@
                         </div>
                         <div class="card-bottom">
 
-                            <a href="customerviewfood.php?restaurantname=<?php echo $row['restaurantname'];?>" class="cust-button fullWidthNoBorderOrange">
+                            <a href="customerviewfood.php?restaurantname=<?php echo $row['restaurantname'];?>"
+                                class="cust-button fullWidthNoBorderOrange">
 
 
                                 VIEW MENU
@@ -110,7 +92,7 @@
     </div>
 
 
-  
+
     <footer class="footer">
         <div class="container">
             <div class="row">

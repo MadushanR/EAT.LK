@@ -593,4 +593,6 @@ body {
     }
   }
 
-  
+  .header .registerfont {
+      font-size: 20px;
+  }
