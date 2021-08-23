@@ -58,10 +58,13 @@
 
             </div>
         </div>
-        <div class="space-content">
-            <div class="nav-space"></div>
-            <div class="content">
-                <?php 
+        <div class="container">
+            <div class="col-md-12 col-sm-12">
+                <div class="space-content">
+                    <div class="nav-space"></div>
+                    <div class="content">
+
+                        <?php 
 $username = "root"; 
 $password = ""; 
 $database = "eatlk"; 
@@ -91,9 +94,12 @@ if ($result = $mysqli->query($query)) {
     $result->free();
 } 
 ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
