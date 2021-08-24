@@ -1,9 +1,8 @@
 .dashboard .space-content {
     display: flex;
     justify-content: center;
-    background-image: url("../EAT.LK/images/WhatsApp\ Image\ 2021-08-20\ at\ 1.21.49\ AM.jpeg");
+    background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url("../EAT.LK/images/chad-montano-MqT0asuoIcU-unsplash.jpg");
     background-size: cover;
-    height:100vh;
     margin:0 !important;
    
 }
@@ -26,7 +25,14 @@
     left: 0;
     bottom: 0;
     width: 15%;
-    background: yellow;
+    background-color: #fbb034;
+    background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
+
+    
+    
+    
+    
+
     color: black;
 }
 
@@ -173,4 +179,84 @@ body {
       flex-basis: 50%;
       text-align: right;
     }
+  }
+
+  .adminHeader {
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    font-size:30px;
+    font-weight: bold;
+    margin-top:50px;
+    color:white;
+  }
+  .adminCard {
+    margin-top:110px;
+    background: #FFFEFE;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding:60px 60px;
+    
+  }
+  .restHeader {
+      margin-top: 40px;
+    background: #FFFFFF;
+    border: 3px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding:80px 80px;
+  }
+  .restLine {
+      margin-top: 40px;
+      background: white;
+      
+  }
+  .restCard {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background: #FFFFFF;
+    border-radius: 20px;   
+    padding:20px 20px; 
+    margin-bottom:30px;
+    display:flex;
+    justify-content: space-between;
+    
+    
+  }
+   .leftside {
+      display:flex;
+      justify-content: space-between;
+      flex-direction: column;
+      height:150px;
+  }
+  .rightside .foodImage img {
+      height:100px;
+      width:300px;
+  }
+  .rightside .foodImage {
+      overflow:hidden;
+      max-width: 200px;
+      max-height: 200px;
+  }
+  .rightside {
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height:150px; 
+  }
+  .removeBtn {
+      border:none;
+      padding:10px 20px;
+  }
+  .cardRow {
+      padding:50px 100px;
+  }
+  .restheaderOut {
+      margin-left: auto;
+      margin-right: auto;
+      width:70%;
   }

@@ -7,10 +7,6 @@
 </head>
 
 <body>
-
-    <div class="header">
-        <h2>Home Page</h2>
-    </div>
     <div class="content">
         <!-- notification message -->
 
@@ -107,46 +103,16 @@
             <div class="space-content">
                 <div class="nav-space"></div>
                 <div class="content">
+                    <div class="container">
+                        <div class="adminHeader">
+                            WELCOME ADMIN
+                        </div>
+                        <div class="adminCard">
+                            jdijdoidjoidfdffbfdfdfbdbfdbfbdddffdfdbdbddbfbddfdddbd
+                        </div>
+                    </div>
 
-                    <?php 
-$username = "root"; 
-$password = ""; 
-$database = "eatlk"; 
-$mysqli = new mysqli("localhost", $username, $password, $database); 
-$query = "SELECT * FROM customers";
-
-
-echo '<table border="1" cellspacing="2" cellpadding="2" width="100%"> 
-      <tr> 
-          <td> <font face="Arial">Username</font></td> 
-          <td> <font face="Arial">Full Name</font> </td> 
-          <td> <font face="Arial">Email</font> </td> 
-          <td> <font face="Arial">Phone</font> </td> 
-          <td> <font face="Arial">Address</font> </td> 
-      </tr>';
-
-if ($result = $mysqli->query($query)) {
-    while ($row = $result->fetch_assoc()) {
-        $field2name = $row["username"];
-        $field3name = $row["fullname"];
-        $field4name = $row["email"];
-        $field5name = $row["phone"];
-        $field1name = $row["address"]; 
-
-        echo '<tr> 
-                  <td>'.$field2name.'</td> 
-                  <td>'.$field3name.'</td> 
-                  <td>'.$field4name.'</td> 
-                  <td>'.$field5name.'</td> 
-                  <td>'.$field1name.'</td> 
-              </tr>';
-    }
-    $result->free();
-} 
-?>
                 </div>
-            </div>
-        </div>
     </body>
 
     </html>

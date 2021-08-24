@@ -45,7 +45,7 @@
 					  ?>
     </table>
     <br>
-    <a href="restauranthomepage.php"><button type="submit">Back</button></a>
+    <a href="restauranthomepage.php"><button type="submit" class="backBtn">Back</button></a>
 </body>
 
 </html>

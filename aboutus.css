@@ -1,0 +1,139 @@
+.aboutUs__header {
+    margin-top: 100px;
+}
+.aboutUs__title {
+    color: black;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: poppins;
+}
+.aboutUs__subTitle {
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 20px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: poppins;
+}
+.aboutUs__teamImg {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+    margin: 30px 0px;
+    max-height: 60%;
+}
+.aboutUs__teamCard {
+    background-color: red;
+    overflow: hidden;
+}
+.aboutUs__teamCard img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.aboutUs__teamCard.card1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.aboutUs__teamCard.card4 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.aboutUs__howTitle {
+    color: black;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: left;
+}
+.aboutUs__howSubTitle {
+    color: black;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: justify;
+    margin-top: 20px;
+    font-family: poppins;
+}
+.aboutUs__meetTeam {
+    margin-top: 30px;
+}
+.aboutUs__ourTeam {
+    display: flex;
+    justify-content: center;
+}
+.aboutUs__ourTeam img {
+    text-align: center;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.aboutUs__teamSub {
+    color: black;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:40px;
+    font-family: poppins;
+}
+.aboutUs .teamMatesGrid {
+    margin-top: 30px;
+}
+.aboutUs .teamMatesCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px 0px;
+}
+.aboutUs .teamMatesCard__profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.aboutUs .teamMatesCard__name {
+    color: black;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    padding: 5px 0px;
+}
+.aboutUs .teamMatesCard__position {
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+}
+.title__large {
+    color: #1F1E1E;
+    font-size: 70px;
+    font-weight: 900;
+    text-align: center;
+    font-family: poppins;
+    
+}
+.title__largeSub {
+    color: #3E4F53;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 10px 0px;
+    text-align: center;
+    font-family: poppins;
+    
+}

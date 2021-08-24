@@ -126,7 +126,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("./images/bgimg.jpg");
+    background-image: url("./images/pexels-julie-aagaard-2351274.jpg");
     background-size: cover;
 }
 .main .login {
@@ -213,7 +213,7 @@ body {
 /*homepage styles*/
 
 .Header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url("./images/pexels-ella-olsson-1640777\ 1.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url("./images/chad-montano-MqT0asuoIcU-unsplash.jpg");
     background-size: cover;
     min-height: 400px;
     z-index: 111;
@@ -280,6 +280,7 @@ body {
     font-size: 40px;
     font-family: poppins;
     font-weight: bold;
+    color:white;
 }
 
 
@@ -450,7 +451,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("./images/bgimg.jpg");
+    background-image: url("./images/alisa-anton-SiKMqywFKWA-unsplash.jpg");
     background-size: cover;
 }
 .mainn .user-type {
