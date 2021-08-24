@@ -3,11 +3,12 @@
     padding: 0px;
   }
   body {
+    padding:100px;
     font-size: 120%;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
-    /* background-image: url("./images/bgimg.jpg"); */
+    background-image: url("./images/jonathan-borba-Gdi8wDpQeg4-unsplash.jpg");
     background-size: cover;
   }
 

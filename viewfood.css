@@ -9,10 +9,12 @@ td{
 body {
     min-height: 100vh;
     
-    background-image: url("./images/bgimg.jpg");
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url("./images/MicrosoftTeams-image.png");
     background-size: cover;
+    
 }
 table{
+    padding:80px;
     width: 100%;
     border: none;
     border-collapse: separate;
@@ -21,12 +23,20 @@ table{
 td,th{
     border: none;
     background: rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+    font-size:22px;
+ font-family: Arial, Helvetica, sans-serif;
     
 }
 
 button{
-    background: #f4e022;
+    background: white;
     font-family: poppins;
     padding: 15px 30px;
     border: none;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.backBtn {
+    margin-left:80px;
 }

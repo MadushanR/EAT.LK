@@ -26,7 +26,7 @@
             </div>
             <div class="topnav" id="myTopnav">
                 <a href="customerprofile.php" class="active">VIEW PROFILE</a>
-                <a href="#news">ABOUT US</a>
+                <a href="aboutus.php">ABOUT US</a>
                 <a href="#contact">CONTACT US</a>
                 <a href="login.php?logout='1'">LOGOUT</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -97,7 +97,7 @@
         <div class="container">
             <div class="row">
                 <div class="logo">
-                    <img src="../../assets/images/logo_transparent.png" alt="">
+                    <img src="./images/logo_transparent.png" alt="">
                 </div>
                 <div class="col-md-4">
                     <div class="footer__itemSection">
