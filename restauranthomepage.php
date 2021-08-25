@@ -36,10 +36,7 @@
                                 height="100px" width="150px">
 
 
-                            <?php
-$rimage="";
-                        }
-                    }?>
+         
                         </li>
                         <li>
                             <form action="restaurantprofile.php" method="POST">
@@ -72,10 +69,7 @@ $rimage="";
                     <div class="col-md-12">
                         <div class="restheaderOut">
                             <div class="restHeader">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat voluptatibus natus
-                                impedit
-                                architecto. Laborum commodi, doloremque eligendi ea architecto veritatis soluta atque,
-                                voluptatum cumque voluptatem quas minus debitis quaerat quasi.
+                            <?php echo $row['description'];?>
                             </div>
                         </div>
 
@@ -88,88 +82,45 @@ $rimage="";
                 <div class="container">
                     <div class="cardRow">
                         <div class="row">
+                        <?php
+    $db = mysqli_connect('localhost', 'root', '', 'eatlk');
+  
+    $errors = array(); 
+   
+    if (count($errors) == 0) {
+        
+    $query = "SELECT * FROM foods where  restaurantname='$restaurantname'";
+        $results = mysqli_query($db, $query);?>
+                <?php
+        if (mysqli_num_rows($results)> 0) {
+            foreach($results as $row)
+            {?>
                             <div class="col-md-4 ">
                                 <div class="restCard">
                                     <div class="leftside">
                                         <div class="foodName">
-                                            Burger
+                                        <?php echo $row['foodname']; ?>
                                         </div>
                                         <div class="foodPrice">
-                                            Price
+                                        <?php echo $row['cost'];?>
                                         </div>
                                     </div>
                                     <div class="rightside">
                                         <div class="foodImage">
-                                            <img src="./images/andy-chilton-0JFveX0c778-unsplash.jpg" alt="">
+                                        <img src="<?php echo 'images/restaurant/'.$restaurantname.'/food/'.$row['image'];?>">
                                         </div>
-                                        <div class="foodRemove">
-                                            <button class="removeBtn">remove</button>
-                                        </div>
+
                                     </div>
                                 </div>
 
                             </div>
-                            <div class=" col-md-4 ">
-                                <div class="restCard">
-                                    <div class="leftside">
-                                        <div class="foodName">
-                                            Burger
-                                        </div>
-                                        <div class="foodPrice">
-                                            Price
-                                        </div>
-                                    </div>
-                                    <div class="rightside">
-                                        <div class="foodImage">
-                                            <img src="./images/andy-chilton-0JFveX0c778-unsplash.jpg" alt="">
-                                        </div>
-                                        <div class="foodRemove">
-                                            <button class="removeBtn">remove</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class=" col-md-4 ">
-                                <div class="restCard">
-                                    <div class="leftside">
-                                        <div class="foodName">
-                                            Burger
-                                        </div>
-                                        <div class="foodPrice">
-                                            Price
-                                        </div>
-                                    </div>
-                                    <div class="rightside">
-                                        <div class="foodImage">
-                                            <img src="./images/andy-chilton-0JFveX0c778-unsplash.jpg" alt="">
-                                        </div>
-                                        <div class="foodRemove">
-                                            <button class="removeBtn">remove</button>
-                                        </div>
-                                    </div>
-                                </div>
 
-                            </div>
-                            <div class=" col-md-4">
-                                <div class="restCard">
-                                    <div class="leftside">
-                                        <div class="foodName">
-                                            Burger
-                                        </div>
-                                        <div class="foodPrice">
-                                            Price
-                                        </div>
-                                    </div>
-                                    <div class="rightside">
-                                        <div class="foodImage">
-                                            <img src="./images/andy-chilton-0JFveX0c778-unsplash.jpg" alt="">
-                                        </div>
-                                        <div class="foodRemove">
-                                            <button class="removeBtn">remove</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php
+            }
+        }
+    }
+            ?>
+                           
                         </div>
                     </div>
                 </div>
@@ -183,3 +134,7 @@ $rimage="";
 </body>
 
 </html>
+<?php
+$rimage="";
+                        }
+                    }?>
