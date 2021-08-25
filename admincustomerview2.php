@@ -65,15 +65,35 @@
                     <div class="content">
 
                         <?php 
- $db = mysqli_connect('localhost', 'root', '', 'eatlk');
-  
- $errors = array(); 
-
- if (count($errors) == 0) { 
+$username = "root"; 
+$password = ""; 
+$database = "eatlk"; 
+$mysqli = new mysqli("localhost", $username, $password, $database); 
 $query = "SELECT * FROM restaurants";
-$results = mysqli_query($db, $query);?>
 
 
+echo '<table width="100%"> 
+      <tr> 
+          <td> <font face="Arial">Username / Restaurant Name</font></td> 
+          <td> <font face="Arial">Email</font> </td> 
+          <td> <font face="Arial">Address</font> </td> 
+      </tr>';
+
+if ($result = $mysqli->query($query)) {
+    while ($row = $result->fetch_assoc()) {
+        $field1name = $row["restaurantname"];
+        $field2name = $row["email"];
+        $field3name = $row["address"]; 
+
+        echo '<tr> 
+                  <td>'.$field1name.'</td> 
+                  <td>'.$field2name.'</td> 
+                  <td>'.$field3name.'</td> 
+              </tr>';
+    }
+    $result->free();
+} 
+?>
                     </div>
                 </div>
             </div>
@@ -88,25 +108,31 @@ $results = mysqli_query($db, $query);?>
                 <div class="col col-4">Username/ Restaurant Name</div>
                 <div class="col col-4">Email</div>
                 <div class="col col-4">Address</div>
-                <div class="col col-4"></div>
             </li>
-            <?php
-        if (mysqli_num_rows($results)> 0) {
-            foreach($results as $row)
-            {?>
             <li class="table-row">
-                <div class="col col-4" data-label="Username"><?php echo $row['restaurantname']; ?></div>
-                <div class="col col-4" data-label="Email"><?php echo $row['email']; ?></div>
-                <div class="col col-4" data-label="Address"><?php echo $row['address']; ?></div>
-                <div class="col col-4" data-label="Address">delete</div>
-
+                <div class="col col-4" data-label="Username">42235</div>
+                <div class="col col-4" data-label="Email">John Doe</div>
+                <div class="col col-4" data-label="Address">$350</div>
 
             </li>
-            <?php
-            }
-        }
-    }
-            ?>
+            <li class="table-row">
+                <div class="col col-4" data-label="Username">42235</div>
+                <div class="col col-4" data-label="Email">John Doe</div>
+                <div class="col col-4" data-label="Address">$350</div>
+
+            </li>
+            <li class="table-row">
+                <div class="col col-4" data-label="Username">42235</div>
+                <div class="col col-4" data-label="Email">John Doe</div>
+                <div class="col col-4" data-label="Address">$350</div>
+
+            </li>
+            <li class="table-row">
+                <div class="col col-4" data-label="Username">42235</div>
+                <div class="col col-4" data-label="Email">John Doe</div>
+                <div class="col col-4" data-label="Address">$350</div>
+
+            </li>
         </ul>
     </div>
 
