@@ -139,6 +139,7 @@ if(isset($_SESSION["cart_item"])){
         <?php 
 }
 ?>
+<a href="checkout.php">checkout</a>
     </div>
 
     <div class="container">
