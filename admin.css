@@ -1,7 +1,7 @@
 .dashboard .space-content {
     display: flex;
     justify-content: center;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url("../EAT.LK/images/chad-montano-MqT0asuoIcU-unsplash.jpg");
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url("../EAT.LK/images/chad-montano-MqT0asuoIcU-unsplash.jpg");
     background-size: cover;
     margin:0 !important;
    

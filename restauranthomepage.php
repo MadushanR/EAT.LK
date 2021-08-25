@@ -82,7 +82,9 @@ $rimage="";
                     </div>
 
                     <hr class="restLine">
+                    <div class="foodSearch">
 
+                    </div>
 
                 </div>
                 <div class="container">
