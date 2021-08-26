@@ -45,6 +45,7 @@ if (isset($_POST['order'])) {
         </div>
     </div>
     </div>
+
     <div class="container">
         <form method="post" action="#">
             <div class="row">
@@ -97,7 +98,10 @@ if (isset($_POST['order'])) {
         <div class="container">
             <div class="row">
                 <div class="logo">
+
+
                     <img src="./images/logo_transparent.png" alt="">
+
                 </div>
                 <div class="col-md-4">
                     <div class="footer__itemSection">

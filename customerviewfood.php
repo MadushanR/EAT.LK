@@ -141,6 +141,7 @@ if(isset($_SESSION["cart_item"])){
 ?>
         <a href="checkout.php" class="checkoutBtn">CHECKOUT</a>
     </div>
+<a href="checkout.php?total_price=<?php echo $total_price;?>">checkout</a> 
 
     <div class="container">
         <div class="card-section">
