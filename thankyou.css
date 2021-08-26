@@ -1,0 +1,37 @@
+.thankyou__title {
+    color: black;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: poppins;
+}
+.thankyou__subTitle {
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 20px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: poppins;
+}
+.thankyou__header {
+    margin-top: 100px;
+}
+.orderTick {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    max-width: 300px;
+}
+.orderTick img {
+    margin-top: 20px;
+    width:400px;
+    text-align: center;
+    border-radius: 540px;
+    margin-bottom: 100px;
+}
