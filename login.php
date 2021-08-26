@@ -33,7 +33,7 @@
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" />
                     </div>
-                    <a class="forgotPs" href="#">Forgot Password</a>
+
                     <button class="loginBtn" type="submit" name="login_user">LOGIN</button>
                 </form>
             </div>

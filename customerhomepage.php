@@ -27,7 +27,7 @@
             <div class="topnav" id="myTopnav">
                 <a href="customerprofile.php">VIEW PROFILE</a>
                 <a href="aboutus.php">ABOUT US</a>
-                <a href="#contact">CONTACT US</a>
+                <a href="mailto:eatlk@gmail.com">CONTACT US</a>
                 <a href="login.php?logout='1'">LOGOUT</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
@@ -39,6 +39,12 @@
         </div>
 
 
+    </div>
+    <div class="searchBar">
+        <input class="emailInput" placeholder="Search Restaurants" type="text">
+        <a class="buttons button--colored ">
+            SEARCH
+        </a>
     </div>
 
     <div class="container">

@@ -31,12 +31,12 @@
                       if ($result = $mysqli->query($query)) {
                         while ($row = $result->fetch_assoc()) {
 							 ?>
-                            <p><?php echo $row['restaurant'];?></p>
+                            <p class="resName"><?php echo $row['restaurant'];?></p>
                             <img src="<?php echo 'images/restaurant/'.$restaurantname.'/logo/'.$row['rimage'];?>"
                                 height="100px" width="150px">
 
 
-         
+
                         </li>
                         <li>
                             <form action="restaurantprofile.php" method="POST">
@@ -69,22 +69,22 @@
                     <div class="col-md-12">
                         <div class="restheaderOut">
                             <div class="restHeader">
-                            <?php echo $row['description'];?>
+                                <?php echo $row['description'];?>
                             </div>
                         </div>
+                        <hr class="restLine">
+                        <div class="foodSearch">
 
+                        </div>
                     </div>
 
-                    <hr class="restLine">
-                    <div class="foodSearch">
 
-                    </div>
 
                 </div>
                 <div class="container">
                     <div class="cardRow">
                         <div class="row">
-                        <?php
+                            <?php
     $db = mysqli_connect('localhost', 'root', '', 'eatlk');
   
     $errors = array(); 
@@ -93,7 +93,7 @@
         
     $query = "SELECT * FROM foods where  restaurantname='$restaurantname'";
         $results = mysqli_query($db, $query);?>
-                <?php
+                            <?php
         if (mysqli_num_rows($results)> 0) {
             foreach($results as $row)
             {?>
@@ -101,15 +101,16 @@
                                 <div class="restCard">
                                     <div class="leftside">
                                         <div class="foodName">
-                                        <?php echo $row['foodname']; ?>
+                                            <?php echo $row['foodname']; ?>
                                         </div>
                                         <div class="foodPrice">
-                                        <?php echo $row['cost'];?>
+                                            <?php echo $row['cost'];?>
                                         </div>
                                     </div>
                                     <div class="rightside">
                                         <div class="foodImage">
-                                        <img src="<?php echo 'images/restaurant/'.$restaurantname.'/food/'.$row['image'];?>">
+                                            <img
+                                                src="<?php echo 'images/restaurant/'.$restaurantname.'/food/'.$row['image'];?>">
                                         </div>
 
                                     </div>
@@ -122,7 +123,7 @@
         }
     }
             ?>
-                           
+
                         </div>
                     </div>
                 </div>
