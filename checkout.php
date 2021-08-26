@@ -1,7 +1,7 @@
 <?php
 session_start();
 $total_price=$_GET['total_price'];
-$delivery=$total_price*'10/100';
+$delivery=$total_price*'0.1';
 $totalprice=$total_price+$delivery;
 if (isset($_POST['order'])) {
     unset($_SESSION["cart_item"]);
