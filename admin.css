@@ -1,9 +1,10 @@
 .dashboard .space-content {
     display: flex;
     justify-content: center;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url("../EAT.LK/images/chad-montano-MqT0asuoIcU-unsplash.jpg");
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url("../EAT.LK/images/chad-montano-MqT0asuoIcU-unsplash.jpg");
     background-size: cover;
     margin:0 !important;
+    height:100vh;
    
 }
 .dashboard .space-content .nav-space {
@@ -217,6 +218,7 @@ body {
       
   }
   .restCard {
+    
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     background: #FFFFFF;
     border-radius: 20px;   
@@ -228,16 +230,19 @@ body {
     
   }
    .leftside {
+     margin-right:35px;
       display:flex;
       justify-content: space-between;
       flex-direction: column;
       height:150px;
   }
   .rightside .foodImage img {
+    
       height:100px;
       width:300px;
   }
   .rightside .foodImage {
+    
       overflow:hidden;
       max-width: 200px;
       max-height: 200px;
@@ -252,11 +257,16 @@ body {
       border:none;
       padding:10px 20px;
   }
-  .cardRow {
+  /* .cardRow {
       padding:50px 100px;
-  }
+  } */
   .restheaderOut {
       margin-left: auto;
       margin-right: auto;
       width:70%;
+  }
+
+  .resName {
+    font-size:30px;
+    font-weight: 600;
   }
