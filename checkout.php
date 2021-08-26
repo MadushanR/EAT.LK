@@ -9,6 +9,7 @@ if (isset($_POST['order'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,6 +23,7 @@ if (isset($_POST['order'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
+
 <body>
     <div class="Header">
         <div class="navbar">
@@ -44,49 +46,62 @@ if (isset($_POST['order'])) {
     </div>
     </div>
 
-    <form method="post" action="#">
-                            <div class="row">
-                                
-                                <div class="col-sm-12">
-                                    <div class="cart-totals margin-b-20">
-                                        <div class="cart-totals-title">
-                                            <h4>Cart Summary</h4> </div>
-                                        <div class="cart-totals-fields">
-										
-                                            <table class="table">
-											<tbody>
-                                          
-												 
-											   
-                                                    <tr>
-                                                        <td>Cart Subtotal</td>
-                                                        <td> <?php echo "$".$total_price; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Shipping & Handling</td>
-                                                        <td><?php echo "$".$delivery;?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="text-color"><strong>Total</strong></td>
-                                                        <td class="text-color"><strong> <?php echo "$".$totalprice; ?></strong></td>
-                                                    </tr>
-                                                </tbody>								
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <!--cart summary-->
-                                    <div class="payment-option">
-                                                <label class="custom-control custom-radio  m-b-20">
-                                                <input  checked value="COD" type="radio">Payment on delivery <br>  
-                                        <input type="submit" onclick="return confirm('Are you sure?');" value="Order now" name="order">
-                                    </div>
-									</form>
+    <div class="container">
+        <form method="post" action="#">
+            <div class="row">
+
+
+                <div class="col-12">
+                    <div class="cart-totals margin-b-20">
+                        <div class="cart-totals-title">
+                            <h4>Cart Summary</h4>
+                        </div>
+                        <div class="cart-totals-fields">
+
+                            <table class="table">
+                                <tbody>
+
+
+
+                                    <tr>
+                                        <td>Cart Subtotal</td>
+                                        <td> <?php echo "$".$total_price; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shipping & Handling</td>
+                                        <td><?php echo "$".$delivery;?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-color"><strong>Total</strong></td>
+                                        <td class="text-color"><strong> <?php echo "$".$totalprice; ?></strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--cart summary-->
+                    <div class="payment-option">
+                        <label class="custom-control custom-radio  m-b-20">
+                            <input checked value="COD" type="radio">Payment on delivery <br>
+                            <input class="emptyBtn" type="submit" onclick="return confirm('Are you sure?');"
+                                value="Order now" name="order">
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+
 
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="logo">
-                    <img src="../../assets/images/logo_transparent.png" alt="">
+
+
+                    <img src="./images/logo_transparent.png" alt="">
+
                 </div>
                 <div class="col-md-4">
                     <div class="footer__itemSection">

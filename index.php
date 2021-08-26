@@ -11,65 +11,61 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 
+
 <body>
-    </div>
     <div class="Header">
         <div class="navbar">
             <div class="logo">
                 <img src="./images/logo_transparent.png" alt="logoeatlk">
             </div>
-            <div class="navmenu">
-                <a>
-                    <span>ABOUT US</span>
-                </a>
-                <a>
-                    <span>CONTACT US</span>
-                </a>
-                <a href="customerprofile.php" method="POST">
-                    <span>VIEW PROFILE</span>
-                </a>
-                <a href="login.php?logout='1'">
-                    <span>LOGIN</span>
+            <div class="topnav" id="myTopnav">
+                <a href="customerprofile.php" class="active">VIEW PROFILE </a>
+                <a href="aboutus.php">ABOUT US</a>
+                <a href="#contact">CONTACT US</a>
+                <a href="login.php">LOGIN</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
                 </a>
             </div>
-            <!-- <div class="userImg">
-                <img src="../../assets/images/dfsfsfs.png" alt="">
-            </div> -->
         </div>
         <div class="mainBanner">
             The best platform to discover nearby restaurants
         </div>
+
+
     </div>
-    <?php
-    $db = mysqli_connect('localhost', 'root', '', 'eatlk');
-    $errors = array(); 
-    if (count($errors) == 0) {
-    $query = "SELECT * FROM restaurants";
-        $results = mysqli_query($db, $query);?>
-        <?php
-        if (mysqli_num_rows($results)> 0) {
-            foreach($results as $row)
-            {?>
-
-                    <?php
-    $restaurantname = $row['restaurantname'];
-    ?>
-                        </div>
-    
-
+    <div class="searchBar">
+        <input class="emailInput" placeholder="Search Restaurants" type="text">
+        <a class="buttons button--colored ">
+            SEARCH
+        </a>
+    </div>
 
     <div class="container">
         <div class="card-section">
             <div class="row">
-                <div class="col-4">
+                <?php
+    $db = mysqli_connect('localhost', 'root', '', 'eatlk');
+    $errors = array(); 
+   if (count($errors) == 0) {
+   $query = "SELECT * FROM restaurants";
+       $results = mysqli_query($db, $query);?>
+                <?php
+        if (mysqli_num_rows($results)> 0) {
+            foreach($results as $row)
+            {
+    $restaurantname = $row['restaurantname'];
+    ?>
+                <div class="col-md-4 col-sm-4">
                     <div class="res-card">
                         <div class="image-section">
-                        <img src="<?php echo 'images/restaurant/'.$restaurantname.'/logo/'.$row['rimage'];?>">
+                            <img src="<?php echo 'images/restaurant/'.$restaurantname.'/logo/'.$row['rimage'];?>">
                         </div>
                         <div class="detail-section">
                             <div class="res-name"><?php echo $row['restaurant'];?></div>
@@ -78,30 +74,28 @@
 
                         </div>
                         <div class="card-bottom">
-                            <a href="customerviewfood.php?restaurant=<?php echo $row['restaurant'];?>" class="cust-button fullWidthNoBorderOrange">
+
+                            <a href="customerviewfood.php?restaurantname=<?php echo $row['restaurantname'];?>"
+                                class="cust-button fullWidthNoBorderOrange">
                                 VIEW MENU
                             </a>
                         </div>
                     </div>
                 </div>
-                
-
-
-            </div>
-        </div>
-    </div>  
-
-   
- <?php
+                <?php
             }
         }
     }
             ?>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="logo">
-                    <img src="../../assets/images/logo_transparent.png" alt="">
+                    <img src="./images/logo_transparent.png" alt="">
                 </div>
                 <div class="col-md-4">
                     <div class="footer__itemSection">
@@ -146,6 +140,19 @@
             </div>
         </div>
     </footer>
+
+
+
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+    </script>
 </body>
 
 </html>

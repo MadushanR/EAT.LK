@@ -17,23 +17,22 @@
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 
-<body>
 
+<body>
     <div class="Header">
         <div class="navbar">
             <div class="logo">
                 <img src="./images/logo_transparent.png" alt="logoeatlk">
             </div>
             <div class="topnav" id="myTopnav">
-                <a href="customerprofile.php" class="active">VIEW PROFILE</a>
+                <a href="customerprofile.php">VIEW PROFILE</a>
                 <a href="aboutus.php">ABOUT US</a>
-                <a href="#contact">CONTACT US</a>
+                <a href="mailto:eatlk@gmail.com">CONTACT US</a>
                 <a href="login.php?logout='1'">LOGOUT</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
                 </a>
             </div>
-
         </div>
         <div class="mainBanner">
             The best platform to discover nearby restaurants
@@ -41,9 +40,12 @@
 
 
     </div>
-
-
-
+    <div class="searchBar">
+        <input class="emailInput" placeholder="Search Restaurants" type="text">
+        <a class="buttons button--colored ">
+            SEARCH
+        </a>
+    </div>
 
     <div class="container">
         <div class="card-section">
@@ -75,8 +77,6 @@
 
                             <a href="customerviewfood.php?restaurantname=<?php echo $row['restaurantname'];?>"
                                 class="cust-button fullWidthNoBorderOrange">
-
-
                                 VIEW MENU
                             </a>
                         </div>
@@ -90,8 +90,6 @@
             </div>
         </div>
     </div>
-
-
 
     <footer class="footer">
         <div class="container">
@@ -142,7 +140,6 @@
             </div>
         </div>
     </footer>
-
 
 
 

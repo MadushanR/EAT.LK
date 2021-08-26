@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="admin.css">
     <title>Admin Homepage</title>
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="admin.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
@@ -44,7 +42,6 @@
 
                         </a>
                     </li>
-
                     <li>
 
                         <a href="login.php?logout='1'">
@@ -61,54 +58,54 @@
 
             </div>
         </div>
-        <div class="space-content">
-            <div class="nav-space"></div>
-            <div class="content">
-            <?php 
- $db = mysqli_connect('localhost', 'root', '', 'eatlk');
+        <div class="container">
+            <div class="col-md-12 col-sm-12">
+                <div class="space-content">
+                    <div class="nav-space"></div>
+                    <div class="content">
+
+                        <?php 
+$username = "root"; 
+$password = ""; 
+$database = "eatlk"; 
+$mysqli = new mysqli("localhost", $username, $password, $database); 
+$query = "SELECT * FROM restaurants";?>
   
- $errors = array(); 
-
- if (count($errors) == 0) { 
-    $query = "SELECT * FROM customers";
-    $results = mysqli_query($db, $query);?>
-
-
-
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
 
     <div class="container">
-        <h2>Customer List <small>Registered</small></h2>
+        <h2>Restaurant List <small>Registered</small></h2>
         <ul class="responsive-table">
             <li class="table-header">
-                <div class="col col-2">UserName</div>
-                <div class="col col-2">Full Name</div>
-                <div class="col col-2">Email</div>
-                <div class="col col-2">Phone</div>
-                <div class="col col-2">Address</div>
+                <div class="col col-4">Username/ Restaurant Name</div>
+                <div class="col col-4">Email</div>
+                <div class="col col-4">Address</div>
             </li>
             <?php
-            if (mysqli_num_rows($results)> 0) {
-            foreach($results as $row)
-            {?>
+if ($result = $mysqli->query($query)) {
+    while ($row = $result->fetch_assoc()) {
+
+              ?>
             <li class="table-row">
-                <div class="col col-2" data-label="Username"><?php echo $row['username']; ?></div>
-                <div class="col col-2" data-label="Address"><?php echo $row['fullname']; ?></div>
-                <div class="col col-2" data-label="Full Name"><?php echo $row['email']; ?>e</div>
-                <div class="col col-2" data-label="Email"><?php echo $row['phone']; ?></div>
-                <div class="col col-2" data-label="Phone"><?php echo $row['address']; ?></div>
+                <div class="col col-4" data-label="Username"><?php echo $row['restaurantname']; ?></div>
+                <div class="col col-4" data-label="Email"><?php echo $row['email']; ?></div>
+                <div class="col col-4" data-label="Address"><?php echo $row['address']; ?></div>
+
             </li>
-            <?php
-            }
-        }
-    }
-            ?>
+            
         </ul>
     </div>
-</body>
+    <?php
+    }
+    $result->free();
+} 
+?>
 
+</body>
 
 </html>

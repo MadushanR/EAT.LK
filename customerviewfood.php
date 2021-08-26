@@ -88,7 +88,7 @@ switch($_GET["action"]) {
     <div id="shopping-cart">
         <div class="txt-heading">Shopping Cart</div>
 
-        <a id="btnEmpty" href="customerviewfood.php?action=empty&restaurantname=<?php echo $restaurantname ?>">Empty
+        <a class="emptyBtn" href="customerviewfood.php?action=empty&restaurantname=<?php echo $restaurantname ?>">Empty
             Cart</a>
         <?php
 if(isset($_SESSION["cart_item"])){
@@ -139,6 +139,7 @@ if(isset($_SESSION["cart_item"])){
         <?php 
 }
 ?>
+        <a href="checkout.php" class="checkoutBtn">CHECKOUT</a>
     </div>
 <a href="checkout.php?total_price=<?php echo $total_price;?>">checkout</a> 
 
@@ -158,10 +159,10 @@ if(isset($_SESSION["cart_item"])){
         if (mysqli_num_rows($results)> 0) {
             foreach($results as $row)
             {?>
-                <div class="col-4">
+                <div class="col-md-3">
                     <form method="post"
                         action="customerviewfood.php?action=add&foodname=<?php echo $row['foodname']; ?>&restaurantname=<?php echo $row['restaurantname']; ?>">
-                        <div class="res-card">
+                        <div class="res-cardd">
                             <div class="image-section">
                                 <img src="<?php echo 'images/restaurant/'.$restaurantname.'/food/'.$row['image'];?>">
                             </div>

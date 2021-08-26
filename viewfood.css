@@ -40,3 +40,11 @@ button{
 .backBtn {
     margin-left:80px;
 }
+.backBtn:hover{
+    background:black;
+    color:white;
+}
+.viewBtn:hover{
+    background:black;
+    color:white;
+}

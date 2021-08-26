@@ -28,12 +28,12 @@
             <td><?php  echo $row['cost']."<br>";?></td>
             <td><?php  echo $row['type']."<br>";?></td>
             <td>
-                <a href="deletefood.php?id=<?php echo $row['id'];?>"><button type="button"
+                <a href="deletefood.php?id=<?php echo $row['id'];?>"><button class="viewBtn" type="button"
                         class="btn btn-warning">Delete</button></a>
             </td>
             <td>
                 <a href="update.php?id=<?php echo $row['id'];?>"><button type="button"
-                        class="btn btn-danger">Update</button></a>
+                        class="viewBtn">Update</button></a>
             </td>
         </tr>
         <?php 
