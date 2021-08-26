@@ -79,35 +79,45 @@ $results = mysqli_query($db, $query);?>
             </div>
         </div>
     </div>
-
+    <div class="searchBar">
+        <input class="emailInput" placeholder="Search Restaurants" type="text">
+        <a class="buttons button--colored ">
+            SEARCH
+        </a>
+    </div>
 
     <div class="container">
-        <h2>Restaurant List <small>Registered</small></h2>
-        <ul class="responsive-table">
-            <li class="table-header">
-                <div class="col col-4">Username/ Restaurant Name</div>
-                <div class="col col-4">Email</div>
-                <div class="col col-4">Address</div>
-                <div class="col col-4"></div>
-            </li>
-            <?php
+        <div class="resList">
+            <h2>Restaurant List <small>Registered</small></h2>
+            <ul class="responsive-table">
+                <li class="table-header">
+                    <div class="col col-4">Username/ Restaurant Name</div>
+                    <div class="col col-4">Email</div>
+                    <div class="col col-4">Address</div>
+                    <div class="col col-4"></div>
+                </li>
+                <?php
         if (mysqli_num_rows($results)> 0) {
             foreach($results as $row)
             {?>
-            <li class="table-row">
-                <div class="col col-4" data-label="Username"><?php echo $row['restaurantname']; ?></div>
-                <div class="col col-4" data-label="Email"><?php echo $row['email']; ?></div>
-                <div class="col col-4" data-label="Address"><?php echo $row['address']; ?></div>
-                <div class="col col-4" data-label="Address">delete</div>
+                <li class="table-row">
+                    <div class="col col-4" data-label="Username"><?php echo $row['restaurantname']; ?></div>
+                    <div class="col col-4" data-label="Email"><?php echo $row['email']; ?></div>
+                    <div class="col col-4" data-label="Address"><?php echo $row['address']; ?></div>
+                    <div class="col col-4 ">
+                        <a href="" class="deleteBtn">DELETE</a>
+                    </div>
 
 
-            </li>
-            <?php
+                </li>
+                <?php
             }
         }
     }
             ?>
-        </ul>
+            </ul>
+        </div>
+
     </div>
 
 </body>

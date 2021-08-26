@@ -64,7 +64,7 @@
         <div class="space-content">
             <div class="nav-space"></div>
             <div class="content">
-            <?php 
+                <?php 
  $db = mysqli_connect('localhost', 'root', '', 'eatlk');
   
  $errors = array(); 
@@ -78,35 +78,43 @@
             </div>
         </div>
     </div>
-
+    <div class="searchBar">
+        <input class="emailInput" placeholder="Search Customers" type="text">
+        <a class="buttons button--colored ">
+            SEARCH
+        </a>
+    </div>
 
     <div class="container">
-        <h2>Customer List <small>Registered</small></h2>
-        <ul class="responsive-table">
-            <li class="table-header">
-                <div class="col col-2">UserName</div>
-                <div class="col col-2">Full Name</div>
-                <div class="col col-2">Email</div>
-                <div class="col col-2">Phone</div>
-                <div class="col col-2">Address</div>
-            </li>
-            <?php
+        <div class="customerList">
+            <h2>Customer List <small>Registered</small></h2>
+            <ul class="responsive-table">
+                <li class="table-header">
+                    <div class="col col-2">UserName</div>
+                    <div class="col col-2">Full Name</div>
+                    <div class="col col-2">Email</div>
+                    <div class="col col-2">Phone</div>
+                    <div class="col col-2">Address</div>
+                </li>
+                <?php
             if (mysqli_num_rows($results)> 0) {
             foreach($results as $row)
             {?>
-            <li class="table-row">
-                <div class="col col-2" data-label="Username"><?php echo $row['username']; ?></div>
-                <div class="col col-2" data-label="Address"><?php echo $row['fullname']; ?></div>
-                <div class="col col-2" data-label="Full Name"><?php echo $row['email']; ?>e</div>
-                <div class="col col-2" data-label="Email"><?php echo $row['phone']; ?></div>
-                <div class="col col-2" data-label="Phone"><?php echo $row['address']; ?></div>
-            </li>
-            <?php
+                <li class="table-row">
+                    <div class="col col-2" data-label="Username"><?php echo $row['username']; ?></div>
+                    <div class="col col-2" data-label="Address"><?php echo $row['fullname']; ?></div>
+                    <div class="col col-2" data-label="Full Name"><?php echo $row['email']; ?>e</div>
+                    <div class="col col-2" data-label="Email"><?php echo $row['phone']; ?></div>
+                    <div class="col col-2" data-label="Phone"><?php echo $row['address']; ?></div>
+                </li>
+                <?php
             }
         }
     }
             ?>
-        </ul>
+            </ul>
+        </div>
+
     </div>
 </body>
 
