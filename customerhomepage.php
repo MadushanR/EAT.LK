@@ -40,12 +40,12 @@
 
 
     </div>
+    <form action="search.php" method="GET">
     <div class="searchBar">
-        <input class="emailInput" placeholder="Search Restaurants" type="text">
-        <a class="buttons button--colored ">
-            SEARCH
-        </a>
+        <input class="emailInput"  name="search_hotel" placeholder="Search Restaurants" type="text">
+        <input type="submit" value="Search" class="buttons button--colored " name="search">
     </div>
+    </form>
 
     <div class="container">
         <div class="card-section">

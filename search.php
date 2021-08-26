@@ -52,8 +52,9 @@
                 <?php
     $db = mysqli_connect('localhost', 'root', '', 'eatlk');
     $errors = array(); 
+    $search_hotel = $_GET['search_hotel']; 
    if (count($errors) == 0) {
-   $query = "SELECT * FROM restaurants";
+   $query ="SELECT * FROM restaurants WHERE (`restaurant` LIKE '%".$search_hotel."%')"; 
        $results = mysqli_query($db, $query);?>
                 <?php
         if (mysqli_num_rows($results)> 0) {
