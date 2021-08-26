@@ -3,11 +3,9 @@ body {
 }
 
 .dashboard .space-content {
-    display: flex;
+    display:flex;
     justify-content: center;
-    align-items: center;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url("../EAT.LK/images/chad-montano-MqT0asuoIcU-unsplash.jpg");
-    background-size: cover;
+    text-align: center;
     margin:0 !important;
 
   
@@ -20,6 +18,7 @@ body {
 .dashboard .space-content .content {
     margin-left:Auto;
     margin-right:Auto;
+  
    
     
 }
@@ -41,13 +40,14 @@ body {
 }
 .admin-nav ul li {
     list-style-type: none;
-    padding: 10px 0px;
+    padding: 10px 20px;
 }
 .admin-nav ul li:first-child h3 {
     font-size: 2em;
     margin-bottom: 50px;
 }
 .admin-nav ul li a {
+  padding: 10px 20px;
     color: black;
     text-decoration: none;
     font-size: 1.3em;
@@ -77,14 +77,14 @@ body {
 
 
 
-table, th, td {
+ table, th, td {
     border: 2px solid black;
     text-decoration: none;
     border-collapse: collapse;
     height: 50px;
   vertical-align: bottom;
 
-}
+} 
 
 @media screen and (max-width: 700px) {
     .dashboard {
@@ -107,22 +107,17 @@ table, th, td {
 
 
 body {
+  background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url("./images/chad-montano-MqT0asuoIcU-unsplash.jpg");
+  background-size: cover;
     font-family: "lato", sans-serif;
   }
   
-  /* .container {
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: 60px;
-    padding-left: 10px;
-    padding-right: 10px;
-    
-  } */
   
   h2 {
-    font-size: 26px;
+    font-size: 40px;
     margin: 20px 0;
     text-align: center;
+    color:white;
   }
   h2 small {
     font-size: 0.5em;
@@ -324,4 +319,9 @@ body {
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
+}
+.navIconn {
+  padding: 10px 0px;
+  font-weight: bold;
+
 }

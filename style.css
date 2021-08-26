@@ -367,6 +367,14 @@ body {
   width: 100%;
   padding: 20px;
 }
+.card-bottomm {
+    margin: -5px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+  }
 .cust-button {
   font-size: 16px;
   padding: 15px 50px;
@@ -684,4 +692,11 @@ body {
     margin-bottom: 50px;
     background-color: #FFFFE0;
     padding: 20px 30px; 
+}
+.res-namee {
+font-weight: 600;
+  font-size: 15px;
+  color: #67666b;
+  padding: 2px 0px;
+  text-align: left;
 }
