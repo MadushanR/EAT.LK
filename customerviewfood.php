@@ -166,13 +166,13 @@ if(isset($_SESSION["cart_item"])){
                                 <img src="<?php echo 'images/restaurant/'.$restaurantname.'/food/'.$row['image'];?>">
                             </div>
                             <div class="detail-section">
-                                <div class="res-name"><?php echo $row['foodname'];?></div>
-                                <div class="res-name"><?php echo $row['cost'];?></div>
+                                <div class="res-namee"><?php echo $row['foodname'];?></div>
+                                <div class="res-namee"><?php echo $row['cost'];?></div>
                             </div>
                             <div class="container">
 
                             </div>
-                            <div class="card-bottom">
+                            <div class="card-bottomm">
                                 <div class="cart-action"><input type="text" class="product-quantity" name="quantity"
                                         value="1" size="2" /><input type="submit" value="Add to Cart"
                                         class="btnAddAction" /></div>

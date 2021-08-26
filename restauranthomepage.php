@@ -40,21 +40,21 @@
                         </li>
                         <li>
                             <form action="restaurantprofile.php" method="POST">
-                                <p> <a href="restaurantprofile.php">Profile</a> </p>
+                                <a href="restaurantprofile.php" class="navIconn">Profile</a>
                             </form>
 
                         </li>
                         <li>
                             <form action="viewfood.php" method="POST">
-                                <p> <a href="viewfood.php">View Foods</a> </p>
+                                <a href="viewfood.php" class="navIconn">View Foods</a>
                             </form>
 
                         </li>
                         <li>
-                            <p> <a href="addfood.php">Add Food</a> </p>
+                            <a href="addfood.php" class="navIconn">Add Food</a>
                         </li>
                         <li>
-                            <p> <a href="login.php">Logout</a> </p>
+                            <a href="login.php" class="navIconn">Logout</a>
                         </li>
 
                     </ul>
