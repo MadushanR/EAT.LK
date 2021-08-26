@@ -57,13 +57,12 @@
             <div class="container">
                 <div class="aboutUs__header">
                     <div class="aboutUs__title">
-                        EAT.LK THE BEST PLATFORM IN TOWN TO BUY FOOD AND CONNECT WITH RESTAURANTS
+                        Delivering
+                        Deliciousness
+
                     </div>
                     <div class="aboutUs__subTitle">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore e
+                        Ordering food from your favorite restaurants is just click away
                     </div>
                 </div>
                 <div class="aboutUs__teamImg">
@@ -84,48 +83,39 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="aboutUs__howTitle">
-                                How we work
+                                Why customers choose us?
                             </div>
                             <div class="aboutUs__howSubTitle">
-                                We focus on helping out all startup founders,who may have no technical knowledge on how
-                                they
-                                should build products to set out with, <br>
-                                Businesses that may have the best product ideas but have no way in setting out in making
-                                that a reality, All SME companies that would be going out to the extent of exceeding
-                                their
-                                development capacity and want to look into engaging with outside vendors.
+                                Order your food today from the EAT.LK and it will be delivered at your doorstep.
+                                Register an account with us to enjoy fast ordering. Delivery, and convenient payment of
+                                your food.
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="aboutUs__howTitle">
-                                Our philosophy
+                                Why restaurants choose us?
                             </div>
                             <div class="aboutUs__howSubTitle">
-                                We set out to help all existing to newly created businesses, in ensuring that the
-                                business
-                                stays afloat. Peeking sky high is the dream of every businessman, every entrepreneur,
-                                but we
-                                do understand that it may not be easy, This is where we come in.We ensure that we do
-                                everything in our power and guidance to assist you so that you would have nothing, but
-                                smooth sailing.
+                                • Convenient for your customers and you
+                                • Bundled with great features
+                                • Powerful yet amazingly quick and simple
+                                • Affordable
+
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="aboutUs__meetTeam">
                     <div class="title__large">
-                        Meet our team
+                        HUNGRY?!
                     </div>
                     <div class="title__largeSub">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                        Good, we are here to serve you
                     </div>
                     <div class="aboutUs__ourTeam">
                         <img src="../EAT.LK/images/pablo-merchan-montes-wYOPqmtDD0w-unsplash.jpg" alt="">
                     </div>
-                    <div class="aboutUs__teamSub">
-                        Lorem Ipsum is simply dummy and typesetting industry. LoremLorem Ipsum is simply dummy and
-                        typesetting industry. Lorem
-                    </div>
+
 
 
                 </div>
