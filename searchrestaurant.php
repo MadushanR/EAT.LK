@@ -68,9 +68,9 @@
  $db = mysqli_connect('localhost', 'root', '', 'eatlk');
   
  $errors = array(); 
-
+ $search_restaurant = $_GET['search_restaurant']; 
  if (count($errors) == 0) { 
-$query = "SELECT * FROM restaurants";
+$query = "SELECT * FROM restaurants WHERE (`restaurant` LIKE '%".$search_restaurant."%')"; 
 $results = mysqli_query($db, $query);?>
 
 
