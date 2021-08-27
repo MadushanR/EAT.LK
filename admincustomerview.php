@@ -78,12 +78,12 @@
             </div>
         </div>
     </div>
+    <form action="searchcustomer.php" method="GET">
     <div class="searchBar">
-        <input class="emailInput" placeholder="Search Customers" type="text">
-        <a class="buttons button--colored ">
-            SEARCH
-        </a>
+        <input class="emailInput" name="search_customer" placeholder="Search Restaurants" type="text">
+        <input type="submit" value="Search" class="buttons button--colored" name="search">
     </div>
+    </form>
 
     <div class="container">
         <div class="customerList">
@@ -95,6 +95,7 @@
                     <div class="col col-2">Email</div>
                     <div class="col col-2">Phone</div>
                     <div class="col col-2">Address</div>
+                    <div class="col col-2"></div>
                 </li>
                 <?php
             if (mysqli_num_rows($results)> 0) {
@@ -106,6 +107,9 @@
                     <div class="col col-2" data-label="Full Name"><?php echo $row['email']; ?>e</div>
                     <div class="col col-2" data-label="Email"><?php echo $row['phone']; ?></div>
                     <div class="col col-2" data-label="Phone"><?php echo $row['address']; ?></div>
+                    <div class="col col-2 ">
+                        <a href="deletecustomerprofile.php?id=<?php echo $row['id'];?>" class="deleteBtn">DELETE</a>
+                    </div>
                 </li>
                 <?php
             }
