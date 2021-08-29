@@ -27,14 +27,6 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-</head>
-
 <body>
     <!DOCTYPE html>
     <html lang="en">
@@ -44,7 +36,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="admin.css">
-        <title>Admin Homepage</title>
+        <title>Admin Homepage </title>
         <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
             rel="stylesheet">
         <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
@@ -105,10 +97,13 @@
                 <div class="content">
                     <div class="container">
                         <div class="adminHeader">
-                            WELCOME ADMIN
+                            WELCOME ADMIN <?php echo $_SESSION['username']; ?>
                         </div>
                         <div class="adminCard">
-                            jdijdoidjoidfdffbfdfdfbdbfdbfbdddffdfdbdbddbfbddfdddbd
+                        The Voyo company is one of Sri Lanka’s largest conglomerates. <br> 
+                        The company diversified in restaurant chains and apparel manufacturing. <br>
+                        This is the web application for their online food ordering system. <br>
+                        As an admin you can view profiles and delete profiles in the system.
                         </div>
                     </div>
 

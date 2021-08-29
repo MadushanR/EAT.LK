@@ -81,7 +81,7 @@ $results = mysqli_query($db, $query);?>
     </div>
     <form action="searchrestaurant.php" method="GET">
     <div class="searchBar">
-        <input class="emailInput" name="search_restaurant" placeholder="Search Restaurants" type="text">
+        <input class="emailInput" name="search_restaurant" placeholder="Enter restaurant name" type="text">
         <input type="submit" value="Search" class="buttons button--colored" name="search">
     </div>
     </form>
@@ -91,11 +91,11 @@ $results = mysqli_query($db, $query);?>
             <h2>Restaurant List <small>Registered</small></h2>
             <ul class="responsive-table">
                 <li class="table-header">
-                    <div class="col col-4">Username/ Restaurant Name</div>
+                    <div class="col col-4">Username</div>
                     <div class="col col-4">Email</div>
                     <div class="col col-4">Address</div>
                     <div class="col col-4">Phone</div>
-                    <div class="col col-4">Restaurant</div>
+                    <div class="col col-4">Restaurant Name</div>
                     <div class="col col-4"></div>
                 </li>
                 <?php
