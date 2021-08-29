@@ -127,7 +127,7 @@ if (isset($_POST['login_user'])) {
     if (empty($password)) {
         array_push($errors, "Password is required");
     }
-    if (strpos($username, 'Restaurant') !== false) {
+ 
       if (count($errors) == 0) {
         $password = md5($password);
         $query = "SELECT * FROM restaurants WHERE restaurantname='$username' AND password='$password'";
@@ -136,26 +136,23 @@ if (isset($_POST['login_user'])) {
           $_SESSION['username'] = $username;
           $_SESSION['success'] = "You are now logged in";
           header('location: restauranthomepage.php');
-        }else {
-            array_push($errors, "Wrong username/password combination");
+          
+        }else if (count($errors) == 0){
+          $password = md5($password);
+          $query = "SELECT * FROM customers WHERE username='$username' AND password='$password'";
+          $results = mysqli_query($db, $query);
+          if (mysqli_num_rows($results) == 1) {
+            $_SESSION['username'] = $username;
+            $_SESSION['success'] = "You are now logged in";
+            header('location: customerhomepage.php');
+        }else{
+          array_push($errors, "Wrong username/password combination");
+
         }
     } 
   }
-  else{
-if (count($errors) == 0) {
-  $password = md5($password);
-  $query = "SELECT * FROM customers WHERE username='$username' AND password='$password'";
-  $results = mysqli_query($db, $query);
-  if (mysqli_num_rows($results) == 1) {
-    $_SESSION['username'] = $username;
-    $_SESSION['success'] = "You are now logged in";
-    header('location: customerhomepage.php');
-  }else {
-      array_push($errors, "Wrong username/password combination");
-  }
 }
-  }
-}
+ 
   
   if (isset($_POST['login_admin'])) {
     $username = mysqli_real_escape_string($db, $_POST['username']);

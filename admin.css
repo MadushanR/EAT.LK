@@ -12,7 +12,7 @@ body {
    
 }
 .dashboard .space-content .nav-space {
-    width: 15%;
+    width: 30%;
   
 }
 .dashboard .space-content .content {
@@ -324,4 +324,7 @@ body {
   padding: 10px 0px;
   font-weight: bold;
 
+}
+.restT {
+  margin-right:5px;
 }
