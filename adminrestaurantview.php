@@ -103,12 +103,12 @@ $results = mysqli_query($db, $query);?>
             foreach($results as $row)
             {?>
                 <li class="table-row">
-                    <div class="col col-4" data-label="Username"><?php echo $row['restaurantname']; ?></div>
-                    <div class="col col-4" data-label="Email"><?php echo $row['email']; ?></div>
-                    <div class="col col-4" data-label="Address"><?php echo $row['address']; ?></div>
-                    <div class="col col-4" data-label="Address"><?php echo $row['phone']; ?></div>
-                    <div class="col col-4" data-label="Address"><?php echo $row['restaurant']; ?></div>
-                    <div class="col col-4 ">
+                    <div class="col col-4 restT" data-label="Username"><?php echo $row['restaurantname']; ?></div>
+                    <div class="col col-4 restT" data-label="Email"><?php echo $row['email']; ?></div>
+                    <div class="col col-4 restT" data-label="Address"><?php echo $row['address']; ?></div>
+                    <div class="col col-4 restT" data-label="Address"><?php echo $row['phone']; ?></div>
+                    <div class="col col-4 restT" data-label="Address"><?php echo $row['restaurant']; ?></div>
+                    <div class="col col-4 restT ">
                         <a href="deleterestaurantprofile.php?id=<?php echo $row['id'];?>" class="deleteBtn">DELETE</a>
                     </div>
 
