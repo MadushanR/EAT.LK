@@ -5,6 +5,7 @@ $delivery=$total_price*'0.1';
 $totalprice=$total_price+$delivery;
 if (isset($_POST['order'])) {
     unset($_SESSION["cart_item"]);
+    header('location: thankyou.php'); 
 }
 ?>
 <!DOCTYPE html>

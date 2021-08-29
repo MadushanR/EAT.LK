@@ -66,6 +66,7 @@ switch($_GET["action"]) {
                 <img src="./images/logo_transparent.png" alt="logoeatlk">
             </div>
             <div class="topnav" id="myTopnav">
+                <a href="customerhomepage.php" class="active">BACK</a>
                 <a href="customerprofile.php" class="active">VIEW PROFILE</a>
                 <a href="aboutus.php">ABOUT US</a>
                 <a href="#contact">CONTACT US</a>
@@ -142,7 +143,7 @@ if(isset($_SESSION["cart_item"])){
         <a href="checkout.php?total_price=<?php echo $total_price;?>" class="checkoutBtn">CHECKOUT</a>
     </div>
 
-
+<br><br>
     <div class="container">
         <div class="card-section">
             <div class="row">

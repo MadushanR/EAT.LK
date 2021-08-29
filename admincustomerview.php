@@ -80,7 +80,7 @@
     </div>
     <form action="searchcustomer.php" method="GET">
     <div class="searchBar">
-        <input class="emailInput" name="search_customer" placeholder="Search Restaurants" type="text">
+        <input class="emailInput" name="search_customer" placeholder="Enter customer name" type="text">
         <input type="submit" value="Search" class="buttons button--colored" name="search">
     </div>
     </form>

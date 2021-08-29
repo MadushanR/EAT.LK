@@ -28,7 +28,7 @@
                 <a href="customerprofile.php" class="active">VIEW PROFILE </a>
                 <a href="aboutus.php">ABOUT US</a>
                 <a href="#contact">CONTACT US</a>
-                <a href="login.php?logout='1'">LOGOUT</a>
+                <a href="login.php">LOGIN</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
                 </a>
@@ -75,7 +75,7 @@
                         </div>
                         <div class="card-bottom">
 
-                            <a href="customerviewfood.php?restaurantname=<?php echo $row['restaurantname'];?>"
+                            <a href="customerviewfood2.php?restaurantname=<?php echo $row['restaurantname'];?>"
                                 class="cust-button fullWidthNoBorderOrange">
                                 VIEW MENU
                             </a>

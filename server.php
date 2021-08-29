@@ -183,5 +183,9 @@ if (count($errors) == 0) {
         }
     }
   }
+
+  if (isset($_POST['back'])) {
+    header('location: index.php');
+  }
   
   ?>

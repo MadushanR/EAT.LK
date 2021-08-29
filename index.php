@@ -25,7 +25,6 @@
                 <img src="./images/logo_transparent.png" alt="logoeatlk">
             </div>
             <div class="topnav" id="myTopnav">
-                <a href="customerprofile.php" class="active">VIEW PROFILE </a>
                 <a href="aboutus.php">ABOUT US</a>
                 <a href="#contact">CONTACT US</a>
                 <a href="login.php">LOGIN</a>
@@ -40,7 +39,7 @@
 
 
     </div>
-    <form action="search.php" method="GET">
+    <form action="search2.php" method="GET">
     <div class="searchBar">
         <input class="emailInput"  name="search_hotel" placeholder="Search Restaurants" type="text">
         <input type="submit" value="Search" class="buttons button--colored " name="search">
@@ -74,7 +73,7 @@
                         </div>
                         <div class="card-bottom">
 
-                            <a href="customerviewfood.php?restaurantname=<?php echo $row['restaurantname'];?>"
+                            <a href="customerviewfood2.php?restaurantname=<?php echo $row['restaurantname'];?>"
                                 class="cust-button fullWidthNoBorderOrange">
                                 VIEW MENU
                             </a>
