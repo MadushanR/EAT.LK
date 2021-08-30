@@ -35,7 +35,7 @@
             <div class="topnav" id="myTopnav">
                 <a href="customerhomepage.php">HOME</a>
                 <a href="#news" class="active">ABOUT US</a>
-                <a href="#contact">CONTACT US</a>
+                <a href="mailto:eatlk@gmail.com">CONTACT US</a>
                 <a href="login.php?logout='1'">LOGOUT</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>

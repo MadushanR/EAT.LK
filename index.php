@@ -26,7 +26,7 @@
             </div>
             <div class="topnav" id="myTopnav">
                 <a href="aboutus.php">ABOUT US</a>
-                <a href="#contact">CONTACT US</a>
+                <a href="mailto:eatlk@gmail.com">CONTACT US</a>
                 <a href="login.php">LOGIN</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
