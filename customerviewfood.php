@@ -69,7 +69,7 @@ switch($_GET["action"]) {
                 <a href="customerhomepage.php" class="active">BACK</a>
                 <a href="customerprofile.php" class="active">VIEW PROFILE</a>
                 <a href="aboutus.php">ABOUT US</a>
-                <a href="#contact">CONTACT US</a>
+                <a href="mailto:eatlk@gmail.com">CONTACT US</a>
                 <a href="login.php?logout='1'">LOGOUT</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
