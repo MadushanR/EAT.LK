@@ -34,7 +34,7 @@
                         <input type="password" id="password" name="password" />
                     </div>
                     <button class="loginBtn" type="submit" name="login_user">Login</button>
-                    <button class="loginBtn" type="submit" name="back">Back</button>
+                    <button class="loginBtn" type="submit" name="back">Back to Home</button>
                 </form>
             </div>
             <div class="createAc">
