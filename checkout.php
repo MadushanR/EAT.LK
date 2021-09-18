@@ -1,11 +1,23 @@
 <?php
 session_start();
 $total_price=$_GET['total_price'];
+$restaurantname=$_GET['restaurantname'];
+$foodname=$_GET['foodname'];
+$date=date("Y-m-d");
+$username= $_SESSION['username'];
 $delivery=$total_price*'0.1';
 $totalprice=$total_price+$delivery;
 if (isset($_POST['order'])) {
+    $db = mysqli_connect('localhost', 'root', '', 'eatlk');
+$query = "INSERT INTO pastorders(restaurantname,foodname,date,customername) 
+VALUES ('$restaurantname','$foodname','$date','$username')";
+$results = mysqli_query($db, $query);
     unset($_SESSION["cart_item"]);
     header('location: thankyou.php'); 
+}
+if (isset($_POST['cancel'])) {
+    unset($_SESSION["cart_item"]);
+    header('location: customerhomepage.php'); 
 }
 ?>
 <!DOCTYPE html>
@@ -81,11 +93,13 @@ if (isset($_POST['order'])) {
                         </div>
                     </div>
                     <!--cart summary-->
+                    
                     <div class="payment-option">
                         <label class="custom-control custom-radio  m-b-20">
                             <input checked value="COD" type="radio">Payment on delivery <br>
-                            <input class="emptyBtn" type="submit" onclick="return confirm('Are you sure?');"
-                                value="Order now" name="order">
+                            <input class="emptyBtn" type="submit" value="Cancel" name="cancel">
+                            <input class="emptyBtn" type="submit" onclick="return confirm('Are you sure?');" value="Order now"  name="order">
+ 
                     </div>
 
                 </div>

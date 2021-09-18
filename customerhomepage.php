@@ -25,18 +25,22 @@
                 <img src="./images/logo_transparent.png" alt="logoeatlk">
             </div>
             <div class="topnav" id="myTopnav">
+                
                 <a href="customerprofile.php">VIEW PROFILE</a>
+                <a href="pastorders.php?username=<?php echo $_SESSION['username'];?>">PAST ORDERS</a>
                 <a href="aboutus.php">ABOUT US</a>
                 <a href="mailto:eatlk@gmail.com">CONTACT US</a>
-                <a href="login.php?logout='1'">LOGOUT</a>
+                <a href="login.php">LOGOUT</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
                 </a>
             </div>
         </div>
         <div class="mainBanner">
-            The best platform to discover nearby restaurants
+            The best platform to discover nearby restaurants  <br>
+            Welcome <?php echo $_SESSION['username'];?>
         </div>
+        
 
 
     </div>
@@ -45,6 +49,8 @@
         <input class="emailInput"  name="search_hotel" placeholder="Search Restaurants" type="text">
         <input type="submit" value="Search" class="buttons button--colored " name="search">
     </div>
+
+</form>
     </form>
 
     <div class="container">

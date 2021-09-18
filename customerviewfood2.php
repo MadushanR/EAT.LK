@@ -1,6 +1,4 @@
-<?php session_start(); 
-$restaurantname=$_GET['restaurantname'];
-?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,6 +39,12 @@ $restaurantname=$_GET['restaurantname'];
 
 
     </div>
+    <form action="searchfood.php" method="GET">
+    <div class="searchBar">
+        <input class="emailInput"  name="search_food" placeholder="Search Foods" type="text">
+        <input type="submit" value="Search" class="buttons button--colored " name="search">
+    </div>
+    </form>
 </div>
       
 
@@ -48,6 +52,8 @@ $restaurantname=$_GET['restaurantname'];
         <div class="card-section">
             <div class="row">
                 <?php
+                $restaurantname=$_GET['restaurantname'];
+
     $db = mysqli_connect('localhost', 'root', '', 'eatlk');
   
     $errors = array(); 

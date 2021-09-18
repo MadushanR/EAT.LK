@@ -1,5 +1,4 @@
 <?php session_start(); 
-$restaurantname=$_GET['restaurantname'];
 require_once("dbcontroller.php");
 $db_handle = new DBController();
 if(!empty($_GET["action"])) {
@@ -90,8 +89,6 @@ switch($_GET["action"]) {
         <input type="submit" value="Search" class="buttons button--colored " name="search">
     </div>
     </form>
-
-
     </div>
     <div id="shopping-cart">
         <div class="txt-heading">Shopping Cart</div>
@@ -147,7 +144,7 @@ if(isset($_SESSION["cart_item"])){
         <?php 
 }
 ?>
-        <a href="checkout.php?total_price=<?php echo $total_price;?>&foodname=<?php echo $item["foodname"];?>&restaurantname=<?php echo $restaurantname;?>" class="checkoutBtn">CHECKOUT</a>
+        <a href="checkout.php?total_price=<?php echo $total_price;?>" class="checkoutBtn">CHECKOUT</a>
     </div>
 
 <br><br>
@@ -158,10 +155,10 @@ if(isset($_SESSION["cart_item"])){
     $db = mysqli_connect('localhost', 'root', '', 'eatlk');
   
     $errors = array(); 
-   
+    $search_food = $_GET['search_food']; 
     if (count($errors) == 0) {
         
-    $query = "SELECT * FROM foods where  restaurantname='$restaurantname'";
+    $query = "SELECT * FROM foods where foodname ='$search_food'";
         $results = mysqli_query($db, $query);?>
                 <?php
         if (mysqli_num_rows($results)> 0) {

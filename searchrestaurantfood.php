@@ -6,12 +6,8 @@
     <head>
         <link rel="stylesheet" href="viewfood.css">
     </head>
-    <form action="searchrestaurantfood.php" method="GET">
-    <div class="searchBar">
-        <input class="emailInput" name="search_food" placeholder="Enter Food" type="text">
+    <input class="emailInput" name="search_restaurant" placeholder="Enter food" type="text">
         <input type="submit" value="Search" class="buttons button--colored" name="search">
-    </div>
-    </form>
     <table border="1" bordercolor="#F0F0F0" cellpadding="20px">
         <th>Food Name</th>
         <th>Image</th>
@@ -21,8 +17,9 @@
 
         <?php
 					  $mysqli = new mysqli("localhost", "root", "", "eatlk"); 
+                      $search_food = $_GET['search_food']; 
                       $restaurantname = mysqli_real_escape_string($mysqli, $_SESSION['username']);
-                      $query = "SELECT * FROM foods where restaurantname='$restaurantname'";
+                      $query = "SELECT * FROM foods where foodname='$search_food'";
                       if ($result = $mysqli->query($query)) {
                         while ($row = $result->fetch_assoc()) {
 							 ?>
