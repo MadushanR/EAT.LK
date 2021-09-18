@@ -158,7 +158,7 @@ if(isset($_SESSION["cart_item"])){
     $search_food = $_GET['search_food']; 
     if (count($errors) == 0) {
         
-    $query = "SELECT * FROM foods where foodname ='$search_food'";
+    $query = "SELECT * FROM foods where foodname like'%$search_food%'";
         $results = mysqli_query($db, $query);?>
                 <?php
         if (mysqli_num_rows($results)> 0) {

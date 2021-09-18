@@ -39,7 +39,7 @@
 
 
     </div>
-    <form action="searchfood.php" method="GET">
+    <form action="searchfood2.php" method="GET">
     <div class="searchBar">
         <input class="emailInput"  name="search_food" placeholder="Search Foods" type="text">
         <input type="submit" value="Search" class="buttons button--colored " name="search">

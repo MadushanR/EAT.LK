@@ -1,46 +1,4 @@
-<?php session_start(); 
-require_once("dbcontroller.php");
-$db_handle = new DBController();
-if(!empty($_GET["action"])) {
-switch($_GET["action"]) {
-	case "add":
-		if(!empty($_POST["quantity"])) {
-			$productByCode = $db_handle->runQuery("SELECT * FROM foods WHERE foodname='" . $_GET["foodname"] . "'");
-			$itemArray = array($productByCode[0]["foodname"]=>array('foodname'=>$productByCode[0]["foodname"], 'cost'=>$productByCode[0]["cost"], 'quantity'=>$_POST["quantity"],'image'=>$productByCode[0]["image"]));			
-			if(!empty($_SESSION["cart_item"])) {
-				if(in_array($productByCode[0]["foodname"],array_keys($_SESSION["cart_item"]))) {
-					foreach($_SESSION["cart_item"] as $k => $v) {
-							if($productByCode[0]["foodname"] == $k) {
-								if(empty($_SESSION["cart_item"][$k]["quantity"])) {
-									$_SESSION["cart_item"][$k]["quantity"] = 0;
-								}
-								$_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
-							}
-					}
-				} else {
-					$_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$itemArray);
-				}
-			} else {
-				$_SESSION["cart_item"] = $itemArray;
-			}
-		}
-	break;
-	case "remove":
-		if(!empty($_SESSION["cart_item"])) {
-			foreach($_SESSION["cart_item"] as $k => $v) {
-					if($_GET["foodname"] == $k)
-						unset($_SESSION["cart_item"][$k]);				
-					if(empty($_SESSION["cart_item"]))
-						unset($_SESSION["cart_item"]);
-			}
-		}
-	break;
-	case "empty":
-		unset($_SESSION["cart_item"]);
-	break;	
-}
-}
-?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,8 +23,7 @@ switch($_GET["action"]) {
                 <img src="./images/logo_transparent.png" alt="logoeatlk">
             </div>
             <div class="topnav" id="myTopnav">
-                <a href="customerhomepage.php" class="active">BACK</a>
-                <a href="customerprofile.php" class="active">VIEW PROFILE</a>
+                <a href="index.php">HOME</a>
                 <a href="aboutus.php">ABOUT US</a>
                 <a href="mailto:eatlk@gmail.com">CONTACT US</a>
                 <a href="login.php">LOGIN</a>
@@ -82,83 +39,27 @@ switch($_GET["action"]) {
 
 
     </div>
-
-    <form action="searchfood.php" method="GET">
+    <form action="searchfood2.php" method="GET">
     <div class="searchBar">
         <input class="emailInput"  name="search_food" placeholder="Search Foods" type="text">
         <input type="submit" value="Search" class="buttons button--colored " name="search">
     </div>
     </form>
-    </div>
-    <div id="shopping-cart">
-        <div class="txt-heading">Shopping Cart</div>
+</div>
+      
 
-        <a class="emptyBtn" href="customerviewfood.php?action=empty&restaurantname=<?php echo $restaurantname ?>">Empty
-            Cart</a>
-        <?php
-if(isset($_SESSION["cart_item"])){
-    $total_quantity = 0;
-    $total_price = 0;
-?>
-        <table class="tbl-cart" cellpadding="10" cellspacing="1">
-            <tbody>
-                <tr>
-                    <th style="text-align:left;">Name</th>
-                    <th style="text-align:right;" width="5%">Quantity</th>
-                    <th style="text-align:right;" width="10%">Unit Price</th>
-                    <th style="text-align:right;" width="10%">Price</th>
-                    <th style="text-align:center;" width="5%">Remove</th>
-                </tr>
-                <?php		
-    foreach ($_SESSION["cart_item"] as $item){
-        $item_price = $item["quantity"]*$item["cost"];
-		?>
-                <tr>
-                    <td><?php echo $item["foodname"]; ?></td>
-                    <td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
-                    <td style="text-align:right;"><?php echo "$ ".$item["cost"]; ?></td>
-                    <td style="text-align:right;"><?php echo "$ ". number_format($item_price,2); ?></td>
-                    <td style="text-align:center;"><a
-                            href="customerviewfood.php?action=remove&foodname=<?php echo $item["foodname"];?>&restaurantname=<?php echo $restaurantname; ?>"
-                            class="btnRemoveAction"><img src="images\icon-delete.png" alt="Remove Item" /></a></td>
-                </tr>
-                <?php
-				$total_quantity += $item["quantity"];
-				$total_price += ($item["cost"]*$item["quantity"]);
-		}
-		?>
-
-                <tr>
-                    <td colspan="2" align="right">Total:</td>
-                    <td align="right"><?php echo $total_quantity; ?></td>
-                    <td align="right" colspan="2"><strong><?php echo "$ ".number_format($total_price, 2); ?></strong>
-                    </td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-        <?php
-} else {
-?>
-        <div class="no-records">Your Cart is Empty</div>
-        <?php 
-}
-?>
-        <a href="checkout.php?total_price=<?php echo $total_price;?>" class="checkoutBtn">CHECKOUT</a>
-    </div>
-
-<br><br>
     <div class="container">
         <div class="card-section">
             <div class="row">
                 <?php
+
     $db = mysqli_connect('localhost', 'root', '', 'eatlk');
   
     $errors = array(); 
     $search_food = $_GET['search_food']; 
     if (count($errors) == 0) {
         
-    $query = "SELECT * FROM foods where foodname ='$search_food'";
+    $query = "SELECT * FROM foods where foodname like'%$search_food%'";
         $results = mysqli_query($db, $query);?>
                 <?php
         if (mysqli_num_rows($results)> 0) {
@@ -179,9 +80,7 @@ if(isset($_SESSION["cart_item"])){
 
                             </div>
                             <div class="card-bottomm">
-                                <div class="cart-action"><input type="text" class="product-quantity" name="quantity"
-                                        value="1" size="2" /><input type="submit" value="Add to Cart"
-                                        class="btnAddAction" /></div>
+                                <div>Login to purchase</div>
 
                             </div>
                     </form>
