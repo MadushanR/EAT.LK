@@ -2,6 +2,7 @@
 session_start();
 $total_price=$_GET['total_price'];
 $restaurantname=$_GET['restaurantname'];
+$quantity=$_GET['quantity'];
 $foodname=$_GET['foodname'];
 $date=date("Y-m-d");
 $username= $_SESSION['username'];
@@ -11,7 +12,10 @@ if (isset($_POST['order'])) {
     $db = mysqli_connect('localhost', 'root', '', 'eatlk');
 $query = "INSERT INTO pastorders(restaurantname,foodname,date,customername) 
 VALUES ('$restaurantname','$foodname','$date','$username')";
+$q = "INSERT INTO orders(restaurantname,foodname,username,quantity) 
+VALUES ('$restaurantname','$foodname','$username','$quantity')";
 $results = mysqli_query($db, $query);
+$e = mysqli_query($db, $q);
     unset($_SESSION["cart_item"]);
     header('location: thankyou.php'); 
 }

@@ -51,6 +51,12 @@
 
                         </li>
                         <li>
+                            <form action="orders.php" method="POST">
+                                <a href="orders.php" class="navIconn">View Orders</a>
+                            </form>
+
+                        </li>
+                        <li>
                             <a href="addfood.php" class="navIconn">Add Food</a>
                         </li>
                         <li>
