@@ -7,7 +7,7 @@ switch($_GET["action"]) {
 	case "add":
 		if(!empty($_POST["quantity"])) {
 			$productByCode = $db_handle->runQuery("SELECT * FROM foods WHERE foodname='" . $_GET["foodname"] . "'");
-			$itemArray = array($productByCode[0]["foodname"]=>array('foodname'=>$productByCode[0]["foodname"], 'cost'=>$productByCode[0]["cost"], 'quantity'=>$_POST["quantity"],'image'=>$productByCode[0]["image"]));			
+			$itemArray = array($productByCode[0]["foodname"]=>array('foodname'=>$productByCode[0]["foodname"], 'cost'=>$productByCode[0]["cost"], 'quantity'=>$_POST["quantity"],'image'=>$productByCode[0]["image"]));
 			if(!empty($_SESSION["cart_item"])) {
 				if(in_array($productByCode[0]["foodname"],array_keys($_SESSION["cart_item"]))) {
 					foreach($_SESSION["cart_item"] as $k => $v) {
@@ -84,6 +84,13 @@ switch($_GET["action"]) {
 
     </div>
 
+    <form action="searchfood.php" method="GET">
+    <div class="searchBar">
+        <input class="emailInput"  name="search_food" placeholder="Search Foods" type="text">
+        <input type="submit" value="Search" class="buttons button--colored " name="search">
+    </div>
+    </form>
+
 
     </div>
     <div id="shopping-cart">
@@ -140,7 +147,7 @@ if(isset($_SESSION["cart_item"])){
         <?php 
 }
 ?>
-        <a href="checkout.php?total_price=<?php echo $total_price;?>" class="checkoutBtn">CHECKOUT</a>
+        <a href="checkout.php?total_price=<?php echo $total_price;?>&foodname=<?php echo $item["foodname"];?>&restaurantname=<?php echo $restaurantname;?>&quantity=<?php echo $item["quantity"];?>" class="checkoutBtn">CHECKOUT</a>
     </div>
 
 <br><br>

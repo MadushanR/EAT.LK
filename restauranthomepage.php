@@ -31,7 +31,7 @@
                       if ($result = $mysqli->query($query)) {
                         while ($row = $result->fetch_assoc()) {
 							 ?>
-                            <p class="resName"><?php echo $row['restaurant'];?></p>
+                            <p class="resName">WELCOME <?php echo $row['restaurant'];?></p>
                             <img src="<?php echo 'images/restaurant/'.$restaurantname.'/logo/'.$row['rimage'];?>"
                                 height="100px" width="150px">
 
@@ -47,6 +47,12 @@
                         <li>
                             <form action="viewfood.php" method="POST">
                                 <a href="viewfood.php" class="navIconn">View Foods</a>
+                            </form>
+
+                        </li>
+                        <li>
+                            <form action="orders.php" method="POST">
+                                <a href="orders.php" class="navIconn">View Orders</a>
                             </form>
 
                         </li>

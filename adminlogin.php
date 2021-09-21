@@ -8,25 +8,7 @@
 </head>
 
 <body>
-    <!-- <div class="header">
-        <h2>Admin Login</h2>
-    </div>
-
-    <form method="post" action="adminlogin.php">
-        <?php include('errors.php'); ?>
-        <div class="input-group">
-            <label>Username</label>
-            <input type="text" name="username">
-        </div>
-        <div class="input-group">
-            <label>Password</label>
-            <input type="password" name="password">
-        </div>
-        <div class="input-group">
-            <button type="submit" class="btn" name="login_admin">Login</button>
-        </div>
-
-    </form> -->
+    
 
     <div class="main">
         <div class="login">
@@ -49,6 +31,8 @@
                     </div>
 
                     <button class="loginBtn" type="submit" name="login_admin">LOGIN</button>
+                    <button class="loginBtn" type="submit" name="back">Back to Home</button>
+
                 </form>
             </div>
 
