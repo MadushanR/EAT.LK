@@ -12,6 +12,7 @@
 
 <body>
     <div class="dashboard">
+
         <div class="nav-cont">
             <div class="admin-nav">
                 <ul>
@@ -20,7 +21,7 @@
                         <a href="adminrestaurantview.php">
                             <span class="material-icons">
                                 restaurants
-                            </span>
+                            </span>+
                             View Restaurants
                         </a>
                     </li>
@@ -73,17 +74,16 @@
 $query = "SELECT * FROM restaurants";
 $results = mysqli_query($db, $query);?>
 
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <form action="searchrestaurant.php" method="GET">
-    <div class="searchBar">
-        <input class="emailInput" name="search_restaurant" placeholder="Enter restaurant name" type="text">
-        <input type="submit" value="Search" class="buttons button--colored" name="search">
-    </div>
+        <div class="searchBar">
+            <input class="emailInput" name="search_restaurant" placeholder="Enter restaurant name" type="text">
+            <input type="submit" value="Search" class="buttons button--colored" name="search">
+        </div>
     </form>
 
     <div class="container">
@@ -91,12 +91,12 @@ $results = mysqli_query($db, $query);?>
             <h2>Restaurant List <small>Registered</small></h2>
             <ul class="responsive-table">
                 <li class="table-header">
-                    <div class="col col-4">Username</div>
-                    <div class="col col-4">Email</div>
-                    <div class="col col-4">Address</div>
-                    <div class="col col-4">Phone</div>
-                    <div class="col col-4">Restaurant Name</div>
-                    <div class="col col-4"></div>
+                    <div class="col col-md-4">Username</div>
+                    <div class="col col-md-4">Email</div>
+                    <div class="col col-md-4">Address</div>
+                    <div class="col col-md-4">Phone</div>
+                    <div class="col col-md-4">Restaurant Name</div>
+                    <div class="col col-md-4"></div>
                 </li>
                 <?php
         if (mysqli_num_rows($results)> 0) {

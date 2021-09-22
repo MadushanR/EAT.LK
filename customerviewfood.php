@@ -143,7 +143,7 @@ if(isset($_SESSION["cart_item"])){
         <a href="checkout.php?total_price=<?php echo $total_price;?>" class="checkoutBtn">CHECKOUT</a>
     </div>
 
-<br><br>
+    <br><br>
     <div class="container">
         <div class="card-section">
             <div class="row">
